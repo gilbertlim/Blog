@@ -20,7 +20,7 @@ title                    : "Gilbert's Blog"
 title_separator          : "&#124;"
 subtitle                 : "Artificial Intelligence"
 name                     : "Gilbert"
-description              : "ML 엔지니어가 되기 위해 꾸준히 공부하는 블로그입니다."
+description              : "공부한 내용을 포스팅하는 블로그입니다."
 url                      : "https://gilbertlim.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -94,9 +94,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Gilbert"
+  name             : "Gilbert(Seongjin Lim)"
   avatar           : "/assets/images/profile.jpg"
-  bio              : "ML 엔지니어를 꿈꾸는 주니어입니다. <br> 미진한 부분에 대해 의견을 남겨주신다면 감사하겠습니다."
+  bio              : "머신러닝 엔지니어를 꿈꾸고 있습니다. <br> 부족한 부분이 있다면 자유롭게 의견을 남겨주세요!"
   location         : "Republic of Korea"
   email            : "9ilbert.app@gmail.com"
   links:
@@ -278,7 +278,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: true
-      share: true
+      share: false
       related: true
 
   # _pages
