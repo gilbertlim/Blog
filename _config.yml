@@ -88,8 +88,8 @@ social:
 analytics:
   provider               : "google"
   google:
-    tracking_id          : G-ZKDKWEP7YL
-    anonymize_ip         : # true, false (default)
+    tracking_id          : "G-ZKDKWEP7YL"
+    anonymize_ip         : false # (default)
 
 
 # Site Author
