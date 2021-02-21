@@ -192,7 +192,16 @@ print(count_by_range(a, -1, 3)) # 6
 - 스택(Stack)
   - pop() : 마지막 원소 제거
   - append(x) : 마지막 인덱스에 원소 삽입
-  
+
+- 리스트와 비교
+
+  ||리스트|deque|
+  |---|---|---|
+  |가장 앞쪽에 원소 추가|O(N)|O(1)|
+  |가장 뒤쪽에 원소 추가|O(1)|O(1)|
+  |가장 앞쪽에 원소 제거|O(N)|O(1)|
+  |가장 뒤쪽에 원소 제거|O(1)|O(1)|
+
 ```python
 from collections import deque
 
