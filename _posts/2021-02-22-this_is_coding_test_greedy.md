@@ -156,7 +156,7 @@ print(solution())
 # 2
 ```
 
-2) 2중 반복문 구조를 이용하는 답안 예시
+2) 2중 반복문 구조를 사용한 방법
 
 ```python
 def solution():
@@ -198,6 +198,8 @@ N과 K가 주어질 때 N이 1이 될 때까지 1번 혹은 2번의 과정을 �
   - N(2 <= N <= 100,000)
   - K(2 <= K <= 100,000)
 
+1) 단순하게 푸는 방법
+
 ```python
 def solution():
     n, k = map(int, input().split())
@@ -217,6 +219,34 @@ def solution():
     
     return result
     
+# test case
+# 25 5
+
+print(solution())
+# 2
+```
+
+2) 효율적인 방법(N이 K의 배수가 되도록 한 번에 빼는 방식)
+
+```python
+def solution():
+    n, k = map(int, input().split())
+    result = 0
+
+    while True:
+        target = (n // k) * k # 나누어 떨어지는 수 
+        result += (n - target) # 1을 뺀 횟수
+        n = target
+      
+        if n < k:
+            break
+        
+        result += 1 # 나눈 횟수
+        n //= k
+    
+    result += (n - 1) # 마지막 남은 수에서 1을 뺀 횟수
+    return result
+
 # test case
 # 25 5
 
