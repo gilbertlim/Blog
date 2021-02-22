@@ -43,6 +43,8 @@ print(solution(n))
 
 N개의 주어진 수들을 M번 더하여 가장 큰수를 만드는 법칙. 단, 배열의 특정한 인덱스에 해당하는 수가 연속해서 K번을 초과하여 더해질 수 없다.
 
+배열의 크기 N, 숫자가 더해지는 횟수 M, 그리고 K가 주어질 때 따른 큰 수의 법칙에 따른 결과를 출력하시오.
+
 - 시간 제한 : 1초 
 - 메모리 제한 : 128MB
 - 입력 조건
@@ -88,21 +90,136 @@ print(solution())
 
 ```python
 def solution():
-  n, m, k = map(int, input().split())
-  data = list(map(int, input().split()))
-  
-  data.sort()
-  first = data[n - 1]
-  second = data[n - 2]
-  
-  count = (m // (k + 1)) * k
-  count += m % (k + 1)
-  
-  result = 0
-  result += count * first
-  result += (m - count) * second
-  
-  return result
+    n, m, k = map(int, input().split())
+    data = list(map(int, input().split()))
+
+    data.sort()
+    first = data[n - 1]
+    second = data[n - 2]
+
+    count = (m // (k + 1)) * k
+    count += m % (k + 1)
+
+    result = 0
+    result += count * first
+    result += (m - count) * second
+
+    return result
+
+# test case
+# 5 8 3
+# 2 4 5 4 6
+ 
+print(solution())
+# 46
 ```
+<br>
 
 > 숫자 카드 게임
+
+숫자 카드 게임은 여러 개의 숫자 카드 중에서 가장 높은 숫자가 쓰인 카드 한 장을 뽑는 게임이다.
+단, 게임의 룰을 지키며 카드를 뽑아야 하고 룰은 다음과 같다.
+  1. 숫자가 쓰인 카드들이 N X M 형태(행 X 열)로 놓여 있다.
+  2. 먼저 뽑고자 하는 카드가 포함되어 있는 행을 선택한다.
+  3. 그 다음 선택된 행에 포함된 카드들 중 가장 낮은 카드를 뽑아야 한다.
+  4. 따라서 처음에 카드를 골라낼 행을 선택할 때, 이후에 해당 행에서 가장 숫자가 낮은 카드를 뽑을 것을 고려하여 최종적으로 가장 높은 숫자의 카드를 뽑을 수 있도록 전략을 세워야 한다.
+
+카드들이 N X M 형태로 놓여 있을 때, 게임의 룰에 맞게 카드를 뽑는 프로그램을 만드시오.
+
+- 시간 제한 : 1초
+- 메모리 제한 : 128MB
+- 입력 조건
+  - 1 <= N, M <= 100
+  - 카드에 적힌 숫자는 1 이상 10,000 이하의 자연수
+  
+1) min() 함수를 사용한 방법
+
+```python
+def solution():
+    n, m = map(int, input().split())
+    result = 0
+
+    for i in range(n):
+        data = list(map(int, input().split()))
+        min_value = min(data)
+        result = max(result, min_value)
+    
+    return result
+
+# test case
+# 3 3
+# 3 1 2
+# 4 1 4
+# 2 2 2
+    
+print(solution())
+# 2
+```
+
+2) 2중 반복문 구조를 이용하는 답안 예시
+
+```python
+def solution():
+    n, m = map(int, input().split())
+    result = 0
+
+    for i in range(n):
+        data = list(map(int, input().split()))
+        min_value = 10001
+        for a in data:
+            min_value = min(min_value, a)
+        result = max(result, min_value)
+
+    return result
+    
+# test case
+# 3 3
+# 3 1 2
+# 4 1 4
+# 2 2 2
+    
+print(solution())
+# 2
+```
+<br>
+
+> 1이 될 때까지
+
+어떠한 수 N이 1이 될 때까지 다음의 두 과정 중 하나를 반복적으로 선택하여 수행하려고 한다.
+단, 두 번째 연산은 N이 K로 나누어떨어질 때만 선택할 수 있다.
+1. N에서 1을 뺀다.
+2. N을 K로 나눈다.
+
+N과 K가 주어질 때 N이 1이 될 때까지 1번 혹은 2번의 과정을 수행해야하는 최소 횟수를 구하는 프로그램을 작성하시오.
+
+- 시간 제한 : 1초
+- 메모리 제한 : 128MB
+- 입력 조건
+  - N(2 <= N <= 100,000)
+  - K(2 <= K <= 100,000)
+
+```python
+def solution():
+    n, k = map(int, input().split())
+    result = 0
+    
+    while n >= k:
+        while n % k != 0:
+            n -= 1
+            result += 1  
+        
+        n //= k
+        result += 1
+    
+    while n > 1:
+        n -= 1
+        result += 1
+    
+    return result
+    
+# test case
+# 25 5
+
+print(solution())
+# 2
+```
