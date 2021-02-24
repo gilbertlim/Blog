@@ -1,3 +1,8 @@
+---
+title: "[Toy project] RDBMS 모델링"
+category: Toy project
+---
+
 ## 1. 개요
 
 > 게시판 사이트 데이터베이스 모델링 및 테이블 작성
