@@ -10,5 +10,8 @@ use_math: true
 - 함수에서 파라미터에 기울기(경사)를 빼면서 하강하여 오차값의 최소가 되는 지점에 이를 때까지 반복시키는 방법
 - 어느 지점이든 미분값을 빼주기만 하면, 오차가 작은 방향으로 이동할 것임
 
+### 공식
+![](/assets/images/posts/ml/gradient_descent.png)
+
 ## 실습
-<a href="https://github.com/gilbertlim/TIL/blob/master/AI/Machine_Learning/Gradient_Descent.ipynb">Github Repository 참조</a>
+<a href="https://colab.research.google.com/drive/13Nt7H2qO0FMbyH64ePqm8ouzy72SRKig?usp=sharing">Google Colab 참조</a>
