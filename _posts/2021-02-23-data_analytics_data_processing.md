@@ -52,4 +52,4 @@ use_math: true
 <br>
 
 ## 데이터 처리를 위한 Pandas 연습
-<a href="https://github.com/gilbertlim/TIL/tree/master/Data_Analytics">Github Repository 참조</a>
+<a href="https://drive.google.com/drive/folders/1eUIauCQeshQuVmw25Ts0G8Jrxik4exyn?usp=sharing">Google Colab 참조</a>

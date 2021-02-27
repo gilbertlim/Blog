@@ -73,4 +73,6 @@ Testing Data
 
 <br>
 # 실습
-<a href="https://github.com/gilbertlim/TIL/tree/master/AI/Machine_Learning/Model_validation">Github Repository 참조</a>
+<a href="https://colab.research.google.com/drive/1NrdDQbSG7xdKuTvfPMprDwl93vge5wf_?usp=sharing">Google Colab 참조1</a>
+<br>
+<a href="https://colab.research.google.com/drive/1hB-mGRKKaiIQnQbYSqfrt-3E_D92nbfp?usp=sharing">Google Colab 참조2</a>
