@@ -149,21 +149,22 @@ $Accuracy = \cfrac{TP + TN}{TP + TN + FP + FN}$
 
 #### Precision(정밀도)
 > Positive로 분류된 결과 중 실제 Positive의 비율
-
+>
 > Negative를 Positive로 틀리게 분류 시 문제가 발생함
 
 $Precision = \cfrac{TP}{TP + FP}$
 
 #### Recall(재현율)
 > 실제 Positive 중에서 Positive로 분류된 비율
-
+>
 > Positive를 Negative로 틀리게 분류 시 문제가 발생함
 
 $Recall = \cfrac{TP}{TP + FN}$
 
 #### F1-Score
-Precision과 Recall의 **조화 평균**
-- Precision과 Recall은 Trade-off 관계
+> Precision과 Recall의 **조화 평균**
+>
+> Precision과 Recall은 Trade-off 관계
 
 $F1-Score = \cfrac{2}{\cfrac{1}{Precision} + \cfrac{1}{Recall}} = 2 \times \cfrac{Precision \times Recall}{Precision + Recall}$
 
