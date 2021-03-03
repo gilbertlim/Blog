@@ -146,6 +146,9 @@ DFS/BFS : 그래프(Graph) 탐색 알고리즘
 ### 그래프(Graph) 자료구조
 - 노드(Node)와 간선(Edge)로 표현됨
     - 노드 = 정점(Vertex)
+
+![](/assets/images/posts/ml/graph.png)
+
 - 그래프 탐색
     - 하나의 노드를 시작으로 다수의 노드를 방문하는 것
     - 두 노드가 간선으로 연결되어 있다면 두 노드는 인접하다(Adjacent)고 표현 함
@@ -155,13 +158,13 @@ DFS/BFS : 그래프(Graph) 탐색 알고리즘
         - 2차원 리스트로 구현
         - 연결되어있지 않는 노드는 무한(987654321)으로 초기화
 
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cc4daa8d-aa17-47ca-8c25-c75bc5647901/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cc4daa8d-aa17-47ca-8c25-c75bc5647901/Untitled.png)
+        ![](/assets/images/posts/ml/Adjacency-matrix.png))
 
     - 인접 리스트(Adjacency List) : 리스트로 그래프의 연결관계를 표현하는 방식
         - 모든 노드에 연결된 노드에 대한 정보를 차례대로 연결하여 저장
         - 2차원 리스트로 구현(`append((노드, 거리))`)
 
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e423258d-c73a-4961-acb7-d1aa9f3665b2/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e423258d-c73a-4961-acb7-d1aa9f3665b2/Untitled.png)
+        ![](/assets/images/posts/ml/Adjacency-list.png))
 
     - 인접 행렬 vs 인접 리스트
         - 메모리 측면
@@ -216,8 +219,8 @@ print(list_graph) # [[(1, 7), (2, 5)], [(0, 7)], [(0, 5)]]
     - "방문 처리" : 스택에 한 번 삽입되어 처리된 노드가 다시 삽입되지 않게 체크하는 것. 방문 처리를 함으로써 각 노드를 한 번씩만 처리할 수 있음
     - 인접한 노드 중, 방문하지 않은 노드가 여러개 있으면 **번호가 낮은 순서부터 처리(관행적)**
 - 예제
-
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6493ddcd-409e-4c1c-8d77-a475379a0de1/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6493ddcd-409e-4c1c-8d77-a475379a0de1/Untitled.png)
+  
+    ![](/assets/images/posts/ml/dfs.png)
 
 #### 동작 방식
 
@@ -265,7 +268,7 @@ dfs(graph, 1, visited)
     3. 2번의 과정을 더 이상 수행할 수 없을 때까지 반복한다.
 - 예제
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9bc23a96-9965-4739-bef7-c9e5fe5e013f/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9bc23a96-9965-4739-bef7-c9e5fe5e013f/Untitled.png)
+    ![](/assets/images/posts/ml/bfs.png))
 
 ```python
 from collections import deque
@@ -314,6 +317,7 @@ bfs(graph, 1, visited)
 - 2차원 배열에서 탐색해야하는 문제는 그래프 형태로 바꿔서 생각하자
 - 탐색 문제를 보면 먼저 그래프 형태로 표현할 것
 
+![](/assets/images/posts/ml/Matrix_location.png)
 
 ## 3. 실전 문제 
 
