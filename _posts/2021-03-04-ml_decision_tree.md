@@ -7,8 +7,9 @@ use_math: true
 # Decision Tree(의사결정 나무)
 
 ## 'Machine'의 개념 업데이트
-ML을 설명할 때 Machine은 <a href="https://gilbertlim.github.io/machine%20learning/ml_intro/">Function</a>이라고 했었다.<br>
-사실, ML에서 Machine은 Function(함수)와 Tree(트리)이다.
+> ML을 설명할 때 Machine은 <a href="https://gilbertlim.github.io/machine%20learning/ml_intro/">Function</a>이라고 했었다.<br>
+>
+> 사실, ML에서 Machine은 Function(함수)와 Tree(트리)이다.
 
 1) Function
 - y를 예측하기 위해 회귀식 $\hat{y}=wx+b$ 을 바탕으로 Gradient Descent 하여 모델을 학습
@@ -19,10 +20,11 @@ ML을 설명할 때 Machine은 <a href="https://gilbertlim.github.io/machine%20l
 
 ## Decision Tree(의사결정 나무)
 > Rule 기반 의사결정 모델
-> 
-> Binary Question(이진 질의)의 분류 규칙을 바탕으로 Root Node의 질의 결과에 따라 Branch(가지)를 타고 이동하며, <br>
-> 최종적으로 분류 또는 예측값을 나타내는 Leaf까지 도달함
+ 
+- Binary Question(이진 질의)의 분류 규칙을 바탕으로 Root Node의 질의 결과에 따라 Branch(가지)를 타고 이동하며, <br>
+- 최종적으로 분류 또는 예측값을 나타내는 Leaf까지 도달함
 
+### 특징
 - 지도 학습 알고리즘의 일종
 - Rule은 Entropy가 가장 작은 방향으로 학습
 - 종류
