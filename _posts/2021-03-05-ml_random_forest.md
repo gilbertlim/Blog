@@ -100,3 +100,7 @@ use_math: true
 
 ## Ensemble의 종류
 ![](/assets/images/posts/ml/Ensemble.png)
+
+## 실습
+- <a href="https://colab.research.google.com/drive/19tBAC09LH8fRhTdOQO_kNndb5zLiiCcv?usp=sharing">Random Forest1</a>
+- <a href="https://drive.google.com/file/d/1A7l9dGplzy8Vpru5Nqzp30dtYZk4U8QR/view?usp=sharing">Random Forest2</a>
