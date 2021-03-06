@@ -158,13 +158,13 @@ DFS/BFS : 그래프(Graph) 탐색 알고리즘
         - 2차원 리스트로 구현
         - 연결되어있지 않는 노드는 무한(987654321)으로 초기화
 
-        ![](/assets/images/posts/ml/Adjacency-matrix.png))
+        ![](/assets/images/posts/ml/Adjacency-matrix.png)
 
     - 인접 리스트(Adjacency List) : 리스트로 그래프의 연결관계를 표현하는 방식
         - 모든 노드에 연결된 노드에 대한 정보를 차례대로 연결하여 저장
         - 2차원 리스트로 구현(`append((노드, 거리))`)
 
-        ![](/assets/images/posts/ml/Adjacency-list.png))
+        ![](/assets/images/posts/ml/Adjacency-list.png)
 
     - 인접 행렬 vs 인접 리스트
         - 메모리 측면
@@ -268,7 +268,7 @@ dfs(graph, 1, visited)
     3. 2번의 과정을 더 이상 수행할 수 없을 때까지 반복한다.
 - 예제
 
-    ![](/assets/images/posts/ml/bfs.png))
+    ![](/assets/images/posts/ml/bfs.png)
 
 ```python
 from collections import deque
