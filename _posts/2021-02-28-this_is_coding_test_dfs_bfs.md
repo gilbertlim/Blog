@@ -147,7 +147,7 @@ DFS/BFS : 그래프(Graph) 탐색 알고리즘
 - 노드(Node)와 간선(Edge)로 표현됨
     - 노드 = 정점(Vertex)
 
-![](/assets/images/posts/ml/graph.png)
+![](/assets/images/posts/algorithm/graph.png)
 
 - 그래프 탐색
     - 하나의 노드를 시작으로 다수의 노드를 방문하는 것
@@ -158,13 +158,13 @@ DFS/BFS : 그래프(Graph) 탐색 알고리즘
         - 2차원 리스트로 구현
         - 연결되어있지 않는 노드는 무한(987654321)으로 초기화
 
-        ![](/assets/images/posts/ml/Adjacency-matrix.png)
+        ![](/assets/images/posts/algorithm/Adjacency-matrix.png)
 
     - 인접 리스트(Adjacency List) : 리스트로 그래프의 연결관계를 표현하는 방식
         - 모든 노드에 연결된 노드에 대한 정보를 차례대로 연결하여 저장
         - 2차원 리스트로 구현(`append((노드, 거리))`)
 
-        ![](/assets/images/posts/ml/Adjacency-list.png)
+        ![](/assets/images/posts/algorithm/Adjacency-list.png)
 
     - 인접 행렬 vs 인접 리스트
         - 메모리 측면
@@ -220,7 +220,7 @@ print(list_graph) # [[(1, 7), (2, 5)], [(0, 7)], [(0, 5)]]
     - 인접한 노드 중, 방문하지 않은 노드가 여러개 있으면 **번호가 낮은 순서부터 처리(관행적)**
 - 예제
   
-    ![](/assets/images/posts/ml/dfs.png)
+    ![](/assets/images/posts/algorithm/dfs.png)
 
 #### 동작 방식
 
@@ -268,7 +268,7 @@ dfs(graph, 1, visited)
     3. 2번의 과정을 더 이상 수행할 수 없을 때까지 반복한다.
 - 예제
 
-    ![](/assets/images/posts/ml/bfs.png)
+    ![](/assets/images/posts/algorithm/bfs.png)
 
 ```python
 from collections import deque
