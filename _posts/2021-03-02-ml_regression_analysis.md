@@ -32,7 +32,7 @@ use_math: true
    
 ## 상관계수(Correlation Coefficient)
 > $x$와 $y$의 관계를 확인하는 지표
-
+>
 > $x_1$과 $x_2$의 관계를 확인하는 지표(다중회귀분석)
 
 $-1 \le r \le 1$
@@ -89,7 +89,7 @@ X_test_scaled = scaler.transform(X_test)
 ```
 
 #### 표준화(Standardization)
-변수의 평균을 0, 표준편차를 1로 만들어 **표준정규분포의 특징**을 갖도록 함
+> 변수의 평균을 0, 표준편차를 1로 만들어 **표준정규분포의 특징**을 갖도록 함
 
 - 가중치(weight) 학습을 더 쉽게 할 수 있도록 함
 
