@@ -7,29 +7,31 @@ use_math: true
 # 로지스틱 회귀(Logistic Regression)
 
 ## 1. 분류
-1. 이진분류(Binary)
-- `남자 vs 여자`, `정상 vs 비정상`과 같이 데이터를 두 가지로(0 또는 1) 나누는 것
-- 로지스틱 회귀 사용
+### 1) 이진분류(Binary)
+> `남자 vs 여자`, `정상 vs 비정상`과 같이 데이터를 두 가지로(0 또는 1) 나누는 것
+- 로지스틱 회귀로 이진분류가 가능함
 
-2. 다중 분류(Categorical)
+### 2) 다중 분류(Categorical)
 - 추후 학습 예정
 - 소프트맥스 회귀 사용
 
 ## 2. 로지스틱 회귀(Logistic Regression)
 
 ### Logistic
-- **= Sigmoid**, Sigmoid 함수를 사용한다는 의미
-- **= Probability**, 0 ~ 1의 값을 가지는 의미 
+> **= Sigmoid**, Sigmoid 함수를 사용한다는 의미 <br>
+> **= Probability**, 0 ~ 1의 값을 가지는 의미 
 
 ### Regression
-- 선형 회귀에서는 $- \infty \ \sim \ + \infty$ 범위의 데이터로부터 $\hat{y} = wx + b$ 을 구하여 연속형 값 $\hat{y}$을 예측  
+> 선형 회귀에서는 $- \infty \ \sim \ + \infty$ 범위의 데이터로부터 $\hat{y} = wx + b$ 을 구하여 연속형 값 $\hat{y}$을 예측  
+
 - 로지스틱 회귀는 **이진 분류**를 이용하여 예측 값이 0 또는 1에 가깝도록 학습하여 0 또는 1에 속할 확률을 구함
 - 데이터의 범위를 $0\ \sim\ 1$로 만들기 위해 활성화함수를 Sigmoid로 사용함<br>$\hat{y} = sigmoid(wx+b)$
 - 범주형 데이터는 **인코딩** 필수
 
 ### Logistic Regression
-- Classification(범주 예측) 모델
-    - 수치 예측이 아닌 어떤 범주에 속하는지에 대한 예측(확률)을 모델링
+> Classification(범주 예측) 모델<br>
+> 수치 예측이 아닌 어떤 범주에 속하는지에 대한 예측(확률)을 모델링
+
 - 수치 예측 모델에 Sigmoid() 필터(활성화 함수, Activation Function)를 적용하여 구현
     - 일반적으로 분류기준은 0.5이며 변경 가능함
     - **0.5보다 크면 1, 0.5보다 작으면 0으로 분류**
@@ -49,7 +51,7 @@ $sigmoid(x)= \cfrac{1}{1+e^{-x}}$
 #### 수치 예측 모델에 Sigmoid() 필터 적용
 
 $\hat{y} = sigmoid(wx+b)= \cfrac{1}{1+e^{-wx+b}}$
-- $w$는 기울기, $b$ 좌우 이동
+- $w$는 기울기, $b$에 따라 좌우로 이동함
 
 $0 \le \hat{y} \le 1$
 
@@ -61,20 +63,7 @@ $0 \le \hat{y} \le 1$
 
 <br>
 
-## 3. Machine Learning Modeling
-**1. Regression**
-  - 1) Learning(Training) -> MSE(Train Data)
-  - 2) Validation -> MSE(Test Data)
-
-<br>  
-
-**2. Classification (Binary, ~~Categorical~~)**
-  - 1) Learning -> **CEE**, MSE(가능하긴 함)
-  - 2) Validation -> Accuracy, Precision, Recall, F1-Score
-
-<br>
-
-## 4. Cross Entropy Error
+## 3. Cross Entropy Error
 > 분류에서 경사하강 시 사용하는 오차 함수
 
 - 서로 다른 사건의 확률(Cross)을 곱하여 Entropy를 계산
@@ -91,9 +80,9 @@ $-y \cdot log( \hat{y}) - (1-y) \cdot log(1- \hat{y})$
 - $y=1 \rightarrow -y \cdot log( \hat{y})$
 ![](/assets/images/posts/ml/cee_y_1.png)
   
-### Information Theory(정보 이론)
+## 4. Information Theory(정보 이론)
 
-#### Information Theory
+### Information Theory
 - 자주 발생하지 않는 사건(발생 확률이 적은, 0에 가까운)이 자주 발생하는 사건(발생 확률이 많은, 1에 가까운)보다 전달하는 **정보량**이 많음
 - 정보 희귀성(발생가능성)의 반비례
 - 예상하기 어려운 정보에 더 높은 가치를 매기기 때문에 Degree of Surprise(놀람의 정도)가 큼
@@ -119,7 +108,7 @@ $$
 ## 5. Confusion Matrix(혼돈 행렬)
 > 분류 모델을 Validation 하는 방법
 
-### Binary Confusion Matrix
+### 1) Binary Confusion Matrix
 
 ![](/assets/images/posts/ml/confusion_matrix.png)
 
@@ -142,26 +131,26 @@ $$
       - 코로나 양성을 확인하고 싶음 -> 양성(Positive)
       - 음성이 양성으로 분류되는 것 보다, 양성이 음성으로 분류되면(Positive -> Negative) 감염병 전파의 위험이 크므로<br> Recall이 높은 모델을 만들어야 함
 
-#### Accuracy(정확도)
+### 2) Accuracy(정확도)
 > Positive와 Negative로 맞게 분류된 데이터의 비율
 
 $Accuracy = \cfrac{TP + TN}{TP + TN + FP + FN}$
 
-#### Precision(정밀도)
+### 3) Precision(정밀도)
 > Positive로 분류된 결과 중 실제 Positive의 비율
 >
 > Negative를 Positive로 틀리게 분류 시 문제가 발생함
 
 $Precision = \cfrac{TP}{TP + FP}$
 
-#### Recall(재현율)
+### 4) Recall(재현율)
 > 실제 Positive 중에서 Positive로 분류된 비율
 >
 > Positive를 Negative로 틀리게 분류 시 문제가 발생함
 
 $Recall = \cfrac{TP}{TP + FN}$
 
-#### F1-Score
+### 5) F1-Score
 > Precision과 Recall의 **조화 평균**
 >
 > Precision과 Recall은 Trade-off 관계

@@ -60,6 +60,8 @@ use_math: true
 - min_samples_leaf : 리프에 들어가는 최소 샘플의 개수 지정
 
 ### 불순도(= Entropy) 계산 방식
+> 트리 모델에서는 불순도(Impurity)가 낮은 방식으로 트리가 만들어지는데, Entropy와 Gini Index가 있다.
+
 #### 1) Entropy
 - **분리 정보 이득(질문 전 Entropy - 질문 후 Entropy(불순도))**이 큰 특징으로 분리 발생
 - 분리 정보 이득을 비교하여 이득이 큰 Feature로 분리 발생
@@ -137,6 +139,8 @@ use_math: true
 
 ### Feature Importance
 > 모델에 대한 Feature의 기여도(중요도)
+> 
+> 트리 모델 혹은 트리 기반의 앙상블 모델에서는 Feature Importance를 확인할 수 있음(Random Forest, ...)
 
 - 1 : 기여도 높음 / 0 : 기여도 없음
 - Feature Importance가 0이라 할지라도, 직접 모델에 적용시켜봐야 실제 기여도를 알 수 있음

@@ -4,13 +4,13 @@ category: Data Analytics
 use_math: true
 ---
 
-## Knowledge Based Management
+## 1. Knowledge Based Management
 - Data : 과거 행동의 결과들
 - Information : 원본은 건들지 않으면서, Data를 가공하여 만든 것
 - Knowledge : Information을 주기적으로 계산하여 특징을 파악하고 예측한 것
 - Wisdom : Decision Making까지 반영된 부분
 
-### Business Intelligence 관점
+### Business Intelligence 관점에서의 Knowledge Based Management
 - Business Activities → Data
 - Data Base, Data warehouse → Information
 - Data Mining → Knowledge
@@ -18,7 +18,9 @@ use_math: true
 
 <br>
 
-## 시각화
+## 2. 시각화
+> 분석한 결과 다른 사람들에게 설득하기 위한 강력한 도구
+
 - 일반적으로 2차원 공간을 시각화
 - Pandas의 Series를 시각화 시킴
 - 데이터 형식에 따라 시각화 방법이 다름
@@ -29,12 +31,12 @@ use_math: true
 
 <br>
 
-## Data Preprocessing(데이터 전처리)
-- 분석에 데이터를 사용할 수 있도록 하기 위한 작업(결측치 처리, ...)
-- 데이터 전처리를 위한 패키지 활용이 신입사원의 주 업무
+## 3. Data Preprocessing(데이터 전처리)
+> 분석에 데이터를 사용할 수 있도록 하기 위한 작업(결측치 처리, ...)<br>
+> 데이터 전처리를 위한 패키지 활용이 신입사원의 주 업무
 
 ### 결측치(missing Value)
-데이터의 일부가 비어있는 것
+> 데이터의 일부가 비어있는 것
 
 #### 특징
 - 파이썬 표기법

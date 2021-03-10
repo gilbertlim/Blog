@@ -5,9 +5,9 @@ use_math: true
 ---
 
 # Data Structure
-데이터를 모아서 관리하는 방식
+> 데이터를 모아서 관리하는 방식
 
-## Python, Pandas, Numpy의 데이터 구조
+## 1. Python, Pandas, Numpy의 데이터 구조
 
 **Python**
 - String
@@ -29,7 +29,7 @@ use_math: true
 **Numpy**
 - Array
 
-## Data → Computer (0, 1) ⇒ Memory(RAM)
+## 2. Data → Computer (0, 1) ⇒ Memory(RAM)
 
 ### Address / Index
 Memory(물리적 공간)에 부여한 Address(논리적인) 구조
@@ -44,22 +44,22 @@ Memory(물리적 공간)에 부여한 Address(논리적인) 구조
     - 영어 1 Byte, 한글 2 Byte
 
 
-## Module
-변수, 함수등을 모아둔 .py 파일
+## 3. Module
+> 변수, 함수등을 모아둔 .py 파일
 
 - import : 파일(*.py)을 메모리에 올려주는 역할
 - 내가 원하는 함수를 만들어서 사용할 수 있음
 
-## Package
-모듈을 디렉토리 형식으로 구조화한 것
+## 4. Package
+> 모듈을 디렉토리 형식으로 구조화한 것
 
 - 모듈을 넣어둔 디렉토리명 = 패키지명
 - AI 분야에서는 패키지를 활용하는 일이 많을 것
 - `__init__.py` 가 있어야 함
 - `__all__` : import * 했을 때 어떤 모듈을 임포트할 지 정의
 
-### 1. Numpy
-다차원 행렬(Array)을 효과적으로 처리하는 패키지
+### 1) Numpy
+> 다차원 행렬(Array)을 효과적으로 처리하는 패키지
 
 #### 특징
 - python에서 수학/과학 연산을 위한 **다차원 행렬 객체 지원**
@@ -84,10 +84,10 @@ Memory(물리적 공간)에 부여한 Address(논리적인) 구조
     - 3D Array
     - Rank3 Tensor(축이 3개인 텐서)
 
-### 2. Pandas
-- 외부의 정형 데이터(주로)를 파이썬으로 불러들이기 위한 패키지
-- 데이터 분석에 필수적인 자료구조를 제공하는 라이브러리
-- 데이터 구조는 R-DB의 테이블 구조와 유사함
+### 2) Pandas
+> 외부의 정형 데이터(주로)를 파이썬으로 불러들이기 위한 패키지<br>
+> 데이터 분석에 필수적인 자료구조를 제공하는 라이브러리<br>
+> 데이터 구조는 R-DB의 테이블 구조와 유사함
 
 #### 특징
 - 로드된 데이터는 Data Frame으로 불림(2개 이상의 Series)
@@ -102,10 +102,10 @@ Memory(물리적 공간)에 부여한 Address(논리적인) 구조
 1. 정형 데이터 : 정해진 형태로 DB에 들어감
 2. 비정형 데이터 : 카카오톡 메시지와 같이 문자, 숫자, 이미지, 링크, 문서, 음성 등 여러가지를 주고 받기 때문에 크기와 타입을 정할 수 없는 데이터
 
-### 3. Seaborn & Matplotlib
-시각화 패키지
+### 3) Seaborn & Matplotlib
+> 시각화 패키지
 
-## Data로부터 파생되는 일들
+## 5. Data로부터 파생되는 일들
 1. Planning
 2. Engineering
     - 수집, 저장, 가공, 전처리

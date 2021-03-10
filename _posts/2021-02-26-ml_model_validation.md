@@ -61,7 +61,8 @@ use_math: true
 > 일반화된 Model을 만드는(학습시키는) 것
 
 ### 일반화
-- Model 생성(학습) 시 사용되지 않은 데이터에서도 유사한 성능 보유
+> Model 생성(학습) 시 사용되지 않은 데이터에서도 유사한 성능 보유하게 하는 것
+
 - Train Error, Test Error의 차이가 크지 않음(Non overfitting)
 
 ## Validation Approach
@@ -76,12 +77,15 @@ use_math: true
 - sklearn을 통해 데이터를 분리할 경우 한번에 나눌 수 없기 때문에 두 차례로 나눠서 진행해야 함
 
 ### Validation Data & Testing Data
-Validation Data 
-- 최적의 모델을 선택하기 위한 데이터
+
+#### 1) Validation Data 
+> 최적의 모델을 선택하기 위한 데이터
+
 - Training 과정에서 사용됨
 
-Testing Data
-- 모델의 최종 성능을 평가하기 위한 데이터
+#### 2) Testing Data
+> 모델의 최종 성능을 평가하기 위한 데이터
+
 - 실무 데이터에 대한 Generalization Error 추정을 위한 데이터
 - Testing Data에 최적 모델을 적용해 얻은 실 값과 예측 값의 차이(오차)
 - Training 과정에서 사용되지 않음
