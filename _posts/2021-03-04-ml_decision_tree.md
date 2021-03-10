@@ -142,6 +142,6 @@ use_math: true
 - Feature Importance가 0이라 할지라도, 직접 모델에 적용시켜봐야 실제 기여도를 알 수 있음
 
 ## 실습
-- <a href="https://colab.research.google.com/drive/12IycDwshRn0iSfSBolLjKC3D1U2FTDZG?usp=sharing">Decision Tree1</a>
-- <a href="https://colab.research.google.com/drive/1KT1oLLZZySYQWu47jThTRqerEM1GIO_X?usp=sharing">Decision Tree2</a>
+- <a href="https://colab.research.google.com/drive/12IycDwshRn0iSfSBolLjKC3D1U2FTDZG?usp=sharing">Decision Tree</a>
+- <a href="https://colab.research.google.com/drive/1KT1oLLZZySYQWu47jThTRqerEM1GIO_X?usp=sharing">Logistic Regression</a>
 - <a href="https://colab.research.google.com/drive/1SymAQM6rkcLBpmOM8NMUYj8v1dQq4WCU?usp=sharing">Logistic Regression vs Decision Tree</a>

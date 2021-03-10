@@ -14,4 +14,4 @@ use_math: true
 ![](/assets/images/posts/ml/gradient_descent.png)
 
 ## 실습
-<a href="https://colab.research.google.com/drive/13Nt7H2qO0FMbyH64ePqm8ouzy72SRKig?usp=sharing">Google Colab 참조</a>
+- <a href="https://colab.research.google.com/drive/13Nt7H2qO0FMbyH64ePqm8ouzy72SRKig?usp=sharing">경사하강법</a>
