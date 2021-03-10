@@ -4,6 +4,12 @@ category: Machine Learning
 use_math: true
 ---
 
+> ML에서 지도학습 모델들은 Regression과 Classification이 가능합니다.
+> 
+> 본 절은 Regression을 기준으로 설명합니다.
+> 
+> Regressions에서는 MSE를, Classification에서는 CEE를 사용합니다.
+
 ## Model Validation
 > 만든 모델이 실제로 사용하기에 적합한지 확인(검증)하는 작업
 
@@ -54,7 +60,6 @@ use_math: true
 ## Modeling
 > 일반화된 Model을 만드는(학습시키는) 것
 
-<br>
 ### 일반화
 - Model 생성(학습) 시 사용되지 않은 데이터에서도 유사한 성능 보유
 - Train Error, Test Error의 차이가 크지 않음(Non overfitting)
@@ -82,7 +87,8 @@ Testing Data
 - Training 과정에서 사용되지 않음
 
 <br>
-# 실습
-<a href="https://colab.research.google.com/drive/1NrdDQbSG7xdKuTvfPMprDwl93vge5wf_?usp=sharing">Google Colab 참조1</a>
-<br>
-<a href="https://colab.research.google.com/drive/1hB-mGRKKaiIQnQbYSqfrt-3E_D92nbfp?usp=sharing">Google Colab 참조2</a>
+
+## 실습
+- <a href="https://colab.research.google.com/drive/1hB-mGRKKaiIQnQbYSqfrt-3E_D92nbfp?usp=sharing">다항회귀분석 평가1</a>
+- <a href="https://colab.research.google.com/drive/1NrdDQbSG7xdKuTvfPMprDwl93vge5wf_?usp=sharing">다항회귀분석 평가2</a>
+
