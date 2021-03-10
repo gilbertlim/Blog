@@ -1,15 +1,15 @@
 ---
-title: "[Data Analytics] 데이터 분석(Data Analytics) 개요"
+title: "[Data Analytics] 데이터 분석(Data Analytics)"
 category: Data Analytics
 use_math: true
 ---
 
 # Data Analytics
-데이터의 특징을 확인하는 일
+> 데이터의 특징을 확인하는 일
 
 ## 1. Data
-- 과거 행동의 결과들
-- 객관적 사실
+> 과거 행동의 결과들<br>
+> 객관적 사실
 
 ### 특징
 1. 생성되는 것(만들어지는 것)
@@ -26,7 +26,7 @@ use_math: true
 - 위조 or 변조 : 행동이 없는데 데이터가 있는 것, 사람이 기록하면 위변조될 가능성 증가
 
 ## 2. Analytics
-~의 특징을 확인하는 일
+> ~의 특징을 확인하는 일
 
 - 사람이 만들어낸 무언가가 특징을 찾으면 AI
 - 사람이 Python을 활용해서 특징을 찾으면 분석, 통계
@@ -63,10 +63,11 @@ use_math: true
 
 
 ### Business
-이익을 창출하기 위한 수단(예 : 삼성전자, 제조)
+> 이익을 창출하기 위한 수단(예 : 삼성전자, 제조)
 
 ## 통계적 측면에서의 Data Analytics
-Data Analytics : **데이터**의 **특징**을 **확인**하는 일
+> Data Analytics : **데이터**의 **특징**을 **확인**하는 일
+
 - **데이터** = 집단
     - 타입 : 타입에 따라 연산이 달라짐 → 확인할 수 있는 특징이 달라짐
     - <a href ="https://m.blog.naver.com/dairum_enc/221409597367">데이터 타입</a>
