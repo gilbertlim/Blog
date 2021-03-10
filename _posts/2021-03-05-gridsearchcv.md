@@ -1,5 +1,5 @@
 ---
-title: "[Machine Learning] GridSearchCV()"
+title: "[Machine Learning] GridSearchCV(for Hyparameter Tuning)"
 category: Machine Learning
 use_math: true
 ---
