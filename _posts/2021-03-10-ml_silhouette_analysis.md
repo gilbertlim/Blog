@@ -18,3 +18,4 @@ use_math: true
   
 ## 실습
 <a href="https://colab.research.google.com/drive/1EDggwBuuIKt2rxFUfQVRz_Qx33cMjRuf?usp=sharing">실루엣 분석</a>
+<a href="https://colab.research.google.com/drive/1NFM2UM_HnoRAEFYymKJg_TOk0NWJMj2L?usp=sharing">Customer Segmentation</a>
