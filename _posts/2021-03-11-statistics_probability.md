@@ -33,7 +33,11 @@ use_math: true
 |부분집합|사건|표본집단|
 |||**확률과 통계를 Binding하는 요소들**<br><br>모집단분포<br>확률변수<br>확률분포<br>누적분포함수|
 
-- 모집단 분포 : 모집단이 따르는 확률분포
+- 표본공간 = 모집단 -> 모집단 분포(모집단이 따르는 확률분포)
+- 사건 = 포본집단 = 확률변수
+- 확률변수에 확률을 각각 대응 -> 확률분포
+- 확률분포를 설명하기 위한 함수 -> 확률분포함수
+- 확률 변수가 특정 값보다 작거나 같을 확률을 나타내는 함수 -> 누적확률분포함수
 
 ## 1) 표본공간(Sample Space)
 > 통계적 실험에서 발생 가능한 '모든 결과(원소)'들의 집합
@@ -112,6 +116,7 @@ use_math: true
   > 연속확률변수의 확률분포를 나타내는 함수
 
 ![](/assets/images/posts/statistics/distribution_function.png)
+https://excelsior-cjh.tistory.com/193
 
 ### 예
 두 장의 카드를 뽑아서(이산형), 두 숫자의 합이 8이상 14이하일 확률은?
@@ -120,11 +125,12 @@ $P(8 \le X \le 14) = \cfrac{4}{25} + \cfrac{5}{25} + \cfrac{4}{25} + \cfrac{3}{2
 
 
 ## 6) 누적분포함수(Cumulative Distribution Function)
-> 확률변수 X의 누적분포함수 또는 분포함수
+> 확률 변수 X가 특정 값보다 작거나 같을 확률을 나타내는 함수
 
+- 분포함수 = 누적분포함수
 - 확률변수 X에 대해서 확률변수 X가 **특정값보다 작거나 같을 확률**
 - 확률밀도함수 그래프 곡선에서 아래 구간의 면적
-- $F(X) = P(X \le x$
+- $F(X) = P(X \le x)$
 - 전체 면적은 1
 
 ### 모수(Parameter)
@@ -135,7 +141,7 @@ $P(8 \le X \le 14) = \cfrac{4}{25} + \cfrac{5}{25} + \cfrac{4}{25} + \cfrac{3}{2
 - 정규분포(Normal Distribution) -> 확률밀도함수
 - 표준정규분포(Standard Normal Distribution) -> 확률밀도함수
 
-#### 1) 이항분포(Binomial Distribution)
+#### (1) 이항분포(Binomial Distribution)
 ##### Bernoulli's Trial(베르누이 시행)
 > 두 가지 결과가 나타나는 확률실험
 
@@ -159,7 +165,7 @@ $B(n, p) = \dbinom{n}{k} p^x (1-p)^{n-x}$
   - 시행횟수 : $n$
   - 성공횟수 : $x$
   
-#### 2) 정규분포(Normal Distribution)
+#### (2) 정규분포(Normal Distribution)
 > 성공확률 0.5, **시행횟수 n이 매우 큰 이항분포**가 어떤 함수와 비슷해 짐
 
 ![](/assets/images/posts/statistics/normal_distribution.png)
@@ -173,7 +179,7 @@ $f(x) = \cfrac{1}{\sqrt{2\pi \sigma^2}}  e^{-\cfrac{(x-\mu)^2}{2 \sigma^2}}$
    - 평균
    - 분산
 
-#### 3) 표준정규분포(Standard Normal Distribution)
+#### (3) 표준정규분포(Standard Normal Distribution)
 > 평균 0, 분산 1인 정규분포
 
 ![](/assets/images/posts/statistics/standard_normal_distribution.png)
@@ -188,8 +194,8 @@ $ f(x) = \cfrac{1}{\sqrt{2 \pi}} e^{-\cfrac{x^2}{2}}$
 - 확률변수 X의 평균이 $\mu$이고, 분산이 $\sigma^2$인 정규분포를 따른다면,
 - 표준 변환(Z-transform)에 의해 정규분포를 표준정규분포로 변환 가능함
 
-### 기타 분포함수
-#### 1) t-분포(Student's t-Distribution)
+### (4) 기타 분포함수
+#### t-분포(Student's t-Distribution)
 > 정규분포의 평균을 측정할 때 주로 사용되는 분포
 
 - **표본의 크기가 30보다 작으면** t 분포를 사용해야 함
@@ -198,7 +204,7 @@ $ f(x) = \cfrac{1}{\sqrt{2 \pi}} e^{-\cfrac{x^2}{2}}$
 ![](/assets/images/posts/statistics/t_distribution.png)
 https://ko.wikipedia.org/wiki/스튜던트_t_분포
 
-#### 2) 카이제곱분포(Chi-Squared Distribution)
+#### 카이제곱분포(Chi-Squared Distribution)
 > k개의 정규 확률변수를 각각 제곱한 다음 합해서 얻어지는 분포<br>
 > 표준정규분포를 제곱한 분포
 
@@ -207,7 +213,7 @@ https://ko.wikipedia.org/wiki/스튜던트_t_분포
 ![](/assets/images/posts/statistics/chi_squared.png)
 https://bookdown.org/mathemedicine/Stat_book/-.html#chi-square-distribution-1
 
-#### 3) F분포(F-Distribution)
+#### F분포(F-Distribution)
 > 정규분포를 이루는 모집단에서 독립적으로 추출한 표본들의 분산 비율이 나타내는 연속확률분포
 
 - 두 집단의 분산을 비교하기위해 사용
