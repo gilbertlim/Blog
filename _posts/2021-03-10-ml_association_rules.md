@@ -1,10 +1,10 @@
 ---
-title: "[Machine Learning] Association Rules(연관 규칙)"
+title: "[Machine Learning] 연관 규칙(Association Rules)"
 category: Machine Learning
 use_math: true
 ---
 
-# Association Rules
+# Association Rules(연관 규칙)
 > 데이터 사이의 연관된 규칙을 찾는 방법 <br>
 > 특정 사건 발생 시 함께 자주 발생하는 다른 사건(조건부 확률)의 규칙(Rule)
 

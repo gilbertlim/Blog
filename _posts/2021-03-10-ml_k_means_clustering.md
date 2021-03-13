@@ -1,5 +1,5 @@
 ---
-title: "[Machine Learning] K-means Clustering(K-평균 군집)"
+title: "[Machine Learning] K-평균 군집(K-means Clustering)"
 category: Machine Learning
 use_math: true
 ---
