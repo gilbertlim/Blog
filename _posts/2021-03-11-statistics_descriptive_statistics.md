@@ -1,5 +1,5 @@
 ---
-title: "[Practical Statistics] Descriptive Statistics(기술 통계)"
+title: "[Practical Statistics] 기술통계(Descriptive Statistics)"
 category: Practical Statistics
 use_math: true
 ---

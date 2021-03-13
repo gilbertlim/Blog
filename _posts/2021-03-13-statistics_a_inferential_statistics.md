@@ -1,5 +1,5 @@
 ---
-title: "[Practical Statistics] Inferential Statistics(추측 통계)"
+title: "[Practical Statistics] 추측 통계(Inferential Statistics)"
 category: Practical Statistics
 use_math: true
 ---
