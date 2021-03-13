@@ -67,7 +67,7 @@ use_math: true
 - 표본평균의 평균($\bar{X}$)
   > 확률변수 X의 기댓값, E(X)
   
-  $E(X)=\sigma(확률변수 * 확률변수의\ 발생확률)$    
+  $E(X)=\sum(확률변수 * 확률변수의\ 발생확률)$    
   
   $E(X) = (1 \times \cfrac{1}{25}) + (2 \times \cfrac{2}{25}) + \dots + (9 \times \cfrac{1}{25}) = 5\ (\bar{X} = \mu)$
   
