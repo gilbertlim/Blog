@@ -1,9 +1,9 @@
 ---
-title: "[Django] 장고(Django)"
+title: "[Django] 장고(Django) 개요"
 category: Django
 ---
 
- # 3. Django 웹 프레임워크
+# 3. Django 웹 프레임워크
 
 > 웹 프로그램을 개발하는 데 사용하는 **파이썬 웹 프레임워크** 중에서 가장 준비가 잘 되어 있는 프레임워크
 >
