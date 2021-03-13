@@ -1,5 +1,5 @@
 ---
-title: "[Machine Learning] Regularization(규제화)"
+title: "[Machine Learning] 규제화(Regularization)"
 category: Machine Learning
 use_math: true
 ---

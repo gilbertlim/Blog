@@ -1,5 +1,5 @@
 ---
-title: "[Machine Learning] ML Modeling(머신러닝 모델링)"
+title: "[Machine Learning] 머신러닝 모델링(ML Modeling)"
 category: Machine Learning
 use_math: true
 ---
@@ -11,6 +11,6 @@ use_math: true
 
 <br>  
 
-**2) Classification (Binary, ~~Categorical~~)**
+**2) Classification (Binary, Categorical)**
   - 1) Learning -> **CEE**, MSE(가능하긴 함)
   - 2) Validation -> Accuracy, Precision, Recall, F1-Score
