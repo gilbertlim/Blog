@@ -33,7 +33,7 @@ DELIMITER ; -- 구분문자를 ';'로 다시 변경함
 CALL [스토어드 프로시저명](); -- 프로시저 호출
 ```
 
-조회 : ` SHOW CREATE PROCEDURE [프로시저명]` 
+조회 : `SHOW CREATE PROCEDURE [프로시저명]` 
 
 수정 : `ALTER PROCEDURE [프로시저명]`
 
