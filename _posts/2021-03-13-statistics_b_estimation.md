@@ -1,5 +1,5 @@
 ---
-title: "[Practical Statistics] Estimation(추정)"
+title: "[Practical Statistics] 추정(Estimation)"
 category: Practical Statistics
 use_math: true
 ---

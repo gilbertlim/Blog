@@ -1,5 +1,5 @@
 ---
-title: "[Practical Statistics] Probability(확률)"
+title: "[Practical Statistics] 확률(Probability)"
 category: Practical Statistics
 use_math: true
 ---
