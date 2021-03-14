@@ -4,10 +4,20 @@ category: Kaggle
 use_math: true
 ---
 
-오늘 부터 캐글 스터디를 진행하기 시작했다.
+I started Kaggle Study alone.
 
-첫 번째 Competition은 <a href="https://www.kaggle.com/c/titanic">Titanic - Machine Learning from Disaster</a>으로 이미 너무나도 유명한 Competition이다.
+I will write most of my writing in English to become familiar with English 
 
-현재 공부하고 있는 커널은 <a href="https://www.kaggle.com/ash316/eda-to-prediction-dietanic">EDA To Prediction(DieTanic)</a>이다.
+The first competition is <a href="https://www.kaggle.com/c/titanic">'Titanic - Machine Learning from Disaster'</a>, It's very famous competition.
 
-공부한 내용은 <a href="https://www.kaggle.com/gilbertlim/eda-to-prediction-dietanic-gilbert">내 커널</a>에 지속적으로 업데이트할 예정이다.
+The kernel I'm currently studying is <a href="https://www.kaggle.com/ash316/eda-to-prediction-dietanic">'EDA To Prediction(DieTanic)'</a>.
+
+Today I learned(TIL) will be updated at <a href="https://www.kaggle.com/gilbertlim/eda-to-prediction-dietanic-gilbert">my kernel</a>.
+
+## TIL
+
+### Sun Mar 14
+1. Check competition overview
+2. Analysis categorical feature and continuous feature
+3. Modify misspelled categorical data 
+4. Fill continuous data
