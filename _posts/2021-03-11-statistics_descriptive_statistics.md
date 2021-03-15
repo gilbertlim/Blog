@@ -37,35 +37,57 @@ use_math: true
         <td align="center">연산</td>
     </tr>
     <tr>
-        <td align="center" rowspan="2">범주형 변수<br>(정성적)</td>
-        <td>명목형(명명) 척도</td>
+        <td align="center" rowspan="2">범주형 변수<br>(Categorical)</td>
+        <td>명목형(Nominal)</td>
         <td align="center">==, !=</td>
     </tr>
     <tr>
-        <td>순서형(서열) 척도</td>
+        <td>순서형(Ordinal)</td>
         <td align="center"> &gt;, &lt; , &gt;&#61;, &lt;&#61;</td>
     </tr>
     <tr>
-        <td align="center" rowspan="2">수치형 변수<br>(정량적)</td>
-        <td>이산형(등간) 척도</td>
+        <td align="center" rowspan="2">수치형 변수<br>(Numerical)</td>
+        <td>구간형(Interval)</td>
         <td align="center">+, -</td>
     </tr>
     <tr>
-        <td>연속형(비율) 척도</td>
+        <td>비율형(Ration)</td>
         <td align="center">*, /</td>
     </tr>
 </table>
 
-- 명명(Nominal) : 측정값의 같고 다름만 확인, 순서 없음 -> A형, O형, B형
-- 서열(Ordinal) : 순서가 있지만, 간격이 동일하지 않음 -> 금메달, 은메달, 동메달
-- 등간(Interval) : 순서가 있고, 간격이 동일함, '0'의 의미가 없음, 셀 수 있음 -> 온도
-- 비율(Ratio) : '0'의 의미가 있고, 사칙연산이 모두 가능함, 셀 수 없음 -> 길이
+#### 범주형(Categorical) 변수
+- 명목형(Nominal)
+  - 측정값의 같고 다름만 확인 가능
+  - 순서 없음 
+  - 예 : 혈액형, 성별, 결혼여부(이진)
+  - 시각화 방법 : Pie Chart, Bar Chart
+- 순서형(Ordinal)
+  - **순서 있음(값의 차이는 의미 없음)**
+  - 예 : 서비스 만족도, 학력, 사회계급
+  - 시각화 방법 : Bar Chart(열의 순서 중요)
 
+#### 수치형(Numerical) 변수
+- 구간형(Interval)
+  - 순서가 있고, 간격이 동일함
+  - **'0'의 의미가 없음(상대 영점)**
+  - **셀 수 있음(Finite)**
+  - 소수점이 의미가 없음(1개 2개씩 헤아려 얻는 것, 자동차는 1대, 2대로 세지만, 1.5대로 세지 않음)
+  - 예 : 온도, 발생 빈도, 성적
+  - Visualization Methods : Bar Chart(열의 순서 중요)
+- 비율형(Ratio)
+  - 사칙연산이 모두 가능함  
+  - **'0'의 의미가 있음(절대 영점)**
+  - **셀 수 없음(Infinite)**
+  - 소수점이 의미가 있음(측정해 얻는 것)
+  - 예 : 나이, 키, 무게, 길이, 혈압 
+  - Visualization Methods : Boxplot, Histogram
+  
 ### 0 의 의미
 > 아무것도 존재하지 않는 상태(절대 영점)
 
-- 이산형(등간) 척도 : 온도가 0도라는 것은 과학적으로 정의한 숫자를 0으로 표기한 것이므로 아무것도 없는 상태가 아님
-- 연속형(비율) 척도 : 길이가 0이라는 것은 아무것도 없는 상태를 의미함
+- 구간형(Interval) : 온도가 0도라는 것은 과학적으로 정의한 숫자를 0으로 표기한 것이므로 비율적 의미를 부여할 수 없음
+- 비율형(Ratio) : 길이가 0이라는 것은 아무것도 없는 상태를 의미함
 
 <br>
   

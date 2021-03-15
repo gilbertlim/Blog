@@ -1,5 +1,5 @@
 ---
-title: "[Practical Statistics] Regression Analysis(회귀 분석)"
+title: "[Practical Statistics] 회귀 분석(Regression Analysis)"
 category: Practical Statistics
 use_math: true
 ---
