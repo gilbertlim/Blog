@@ -70,7 +70,7 @@ use_math: true
 
 - **데이터** = 집단
     - 타입 : 타입에 따라 연산이 달라짐 → 확인할 수 있는 특징이 달라짐
-    - <a href ="https://m.blog.naver.com/dairum_enc/221409597367">데이터 타입</a>
+    - <a href ="https://gilbertlim.github.io/practical%20statistics/statistics_descriptive_statistics/">데이터 타입</a>
 - **특징**
     - 평균(중심화 경향치, 모여있는 특징, 어디쯤에 모여 있을까?)
     - 분산(산포도, 떨어져있는 특징, 평균에서 평균적으로 떨어져 있는 거리의 제곱)
