@@ -21,3 +21,7 @@ Today I learned(TIL) will be updated at <a href="https://www.kaggle.com/gilbertl
 2. Analysis categorical feature and continuous feature
 3. Modify misspelled categorical data 
 4. Fill continuous data
+
+### Mon Mar 15
+1. Analysis categorical feature
+2. Fill categorical data
