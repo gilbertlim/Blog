@@ -111,13 +111,16 @@ use_math: true
 ### *) Data Collection
 
 ### *) Data Preprocessing & EDA
+- **Input data 'Float' Type Casting 처리**
+- **Classification의 경우 Target Encoding**
+- Normalization or Standardization
 
 ### 1) Define
 > 모델의 모양(신경망 구조) 정의
 
 - Sequential Model
 - Layers / Units(Node) : Hidden Layer, Node 개수
-- Input Shape : Input Tensor(Float Type)의 차원
+- Input Shape : Input Tensor의 차원
 - Activations : Sigmoid, ReLU, ...
 
 ### 2) Compile
