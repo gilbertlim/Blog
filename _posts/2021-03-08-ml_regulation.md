@@ -4,10 +4,14 @@ category: Machine Learning
 use_math: true
 ---
 
-## Overfitting 발생 원인
-1) Data point 개수가 적을 때
+## Overfitting
+> 모델이 Train 데이터에만 최적화된 상태<br>
+> Loss가 Train Data에 대해서만 낮지만, Validation Data에 대해서는 높다.
+
+### Overfitting 발생 원인
+<mark style="backgrounc-color:yellow">1) Data point 개수가 적을 때</mark>
    
-2) Model Capacity가 높을 때
+<mark style="backgrounc-color:yellow">2) Model Capacity가 높을 때</mark>
 - 파라미터($w_i$) 개수가 많은 경우
     
 
@@ -20,7 +24,7 @@ use_math: true
 
 - w의 차수가 크면 비용 함수가 구불구불해지면서 모든 데이터에 맞게 되는 Overfitting이 일어난다.
 - 이러한 성질을 최소화 하기 위해 **특정 값**을 더하는데, 무엇을 더하는지에 따라 모델이 달라진다.
--
+- 특정 값을 더하면 지속적으로 노이즈가 발생하여 Loss 증가하게 만든다.
 
 ### Ridge Regression(리지 회귀)
 > MSE 식에 $\alpha \sum\limits_{j=1}^m {w_j}^2$ 를 더하여 w를 제어한다.
