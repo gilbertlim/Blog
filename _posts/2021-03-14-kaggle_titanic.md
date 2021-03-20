@@ -40,4 +40,9 @@ Today I learned(TIL) will be updated at <a href="">my kernel</a>.
 1. Analysis two discrete features('SibSip', 'Parch').
 2. Pracitce Feature Enginnering for categorical values(Sum three categorical values('Pclass', 'Sex', 'Embarked') -> Make a new feature).
 3. Analysis a continuous feature('Fare').
-4. Sumary Observations.
+4. Summary Observations.
+5. Check correlation between the features(Heatmap)
+6. Feature Engineering and Data Cleaning
+   - Binning 'Age' Features -> 'Age_band'
+   - Summation 'Parch' and 'SibSp' -> 'Family_Size'
+   - 'Family_Size' == 0 -> 'Alone'
