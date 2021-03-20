@@ -6,22 +6,38 @@ use_math: true
 
 I started Kaggle Study alone.
 
-I will write most of my writing in English to become familiar with English 
+I will write most of my writing in English to become familiar with English. 
 
 The first competition is <a href="https://www.kaggle.com/c/titanic">'Titanic - Machine Learning from Disaster'</a>, It's very famous competition.
 
 The kernel I'm currently studying is <a href="https://www.kaggle.com/ash316/eda-to-prediction-dietanic">'EDA To Prediction(DieTanic)'</a>.
 
-Today I learned(TIL) will be updated at <a href="https://www.kaggle.com/gilbertlim/eda-to-prediction-dietanic-gilbert">my kernel</a>.
+Today I learned(TIL) will be updated at <a href="">my kernel</a>.
 
 ## TIL
 
 ### Sun Mar 14
-1. Check competition overview
-2. Analysis categorical feature and continuous feature
-3. Modify misspelled categorical data 
-4. Fill continuous data
+1. Check competition overview and contents of the kernel.
+2. Check type of features
+    - Categorical Features : Sex, Embarked
+    - Ordinal Features : Pclass
+    - Continuous Features : Age
+3. Analysis a categorical feature('Sex'), a ordinal feature('Pclass') and a continuous feature('Age').
+4. Make a new categorical feature('Initial') from 'Name'.
+5. Fill continuous data('Age').
 
 ### Mon Mar 15
-1. Analysis categorical feature
-2. Fill categorical data
+1. Analysis categorical feature('Embarked').
+2. Fill categorical data('Embarked').
+
+### Tue Mar 16 ~ Wed Mar 18
+- I Studied another topics.
+
+### Fri Mar 19
+1. Review that I studied up to now.
+
+### Sat Mar 20
+1. Analysis two discrete features('SibSip', 'Parch').
+2. Pracitce Feature Enginnering for categorical values(Sum three categorical values('Pclass', 'Sex', 'Embarked') -> Make a new feature).
+3. Analysis a continuous feature('Fare').
+4. Sumary Observations.
