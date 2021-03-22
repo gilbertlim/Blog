@@ -46,3 +46,29 @@ Today I learned(TIL) will be updated at <a href="">my kernel</a>.
    - Binning 'Age' Features -> 'Age_band'
    - Summation 'Parch' and 'SibSp' -> 'Family_Size'
    - 'Family_Size' == 0 -> 'Alone'
+   
+### Sun Mar 21
+1. Feature Engineering and Data Cleaning
+   - 'Fare' -> 'Fare range' -> 'Fare_cat'
+2. Label Encoding
+   - 'Sex', 'Embarked', 'Initial'
+3. Drop unneeded features
+   - 'Name', 'Age', 'Ticket', 'Fare', 'Cabin', 'Fare_Range', 'PassengerId'
+4. Heatmap
+5. Predicitve Modeling
+   - Logistic Regression
+   - Support Vector Machines(Linear and radial)
+   - Random Forest
+   - K-Nearest Neighbours
+   - Naive Bayes
+   - Decision Tree
+   - Logistic Regression
+   
+### Mon Mar 22
+1. Cross Validation
+   - K-Fold
+   - Confusion Matrix
+2. Hyper-Parameters Tuning
+   - GridSearchCV
+   - Ensembling
+      - Voting Classifier
