@@ -72,3 +72,11 @@ Today I learned(TIL) will be updated at <a href="">my kernel</a>.
    - GridSearchCV
    - Ensembling
       - Voting Classifier
+   
+### Tue Mar 23
+1. Hyper-Parameters Tuning
+   - Bagging
+   - Boosting
+   - Hyper-Parameter Tuning for AdaBoost
+2. Confusion Matrix for the Best Model
+   - Feature Importance
