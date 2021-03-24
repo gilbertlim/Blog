@@ -1,12 +1,12 @@
 ---
-title: "[Deep Learning] 이미지 처리(Image Processing)"
+title: "[Deep Learning] 이미지를 분류하면서 나타나는 문제들"
 category: Deep Learning
 use_math: true
 ---
 
 <br>
 
-# 1. 이미지를 처리하면서 나타나는 문제들
+# 1. 이미지를 분류하면서 나타나는 문제들
 
 ## 1) 이미지 사이즈
 > 이미지들의 사이즈가 각기 다른 경우 어떻게 할까?
