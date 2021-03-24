@@ -365,3 +365,9 @@ print('Accuracy = {:.5f}'.format(accuracy))
   - validation_steps
       - 한 번 epoch를 돌고난 후 validation accuracy를 측정할 때 validation set을 몇 번 볼 것인지 설정
       - validation data 수 / 배치 사이즈
+  
+<br>
+
+## 실습
+  - <a href="https://colab.research.google.com/drive/1ggKAh_HxSedNLORyKYxvwKhkqm_he5mb?usp=sharing">로고 이미지 분류 - 디렉토리</a>
+  - <a href="https://drive.google.com/file/d/14a_qhVq__YrxCzVkpZfLutnDNTTBofHG/view?usp=sharing">자동차 이미지 분류 - 텐서</a>
