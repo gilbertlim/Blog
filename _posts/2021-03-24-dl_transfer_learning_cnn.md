@@ -41,7 +41,7 @@ ILSVC에서는 이미지넷이 제공하는 이미지 클래스를 분류하여 
 
 이러한 모델들은 내가 분류하고자하는 이미지의 크기와 Class 개수가 다를 수 있으므로, 그대로 적용할 수는 없고 해결할 문제에 맞춰 몇 가지를 수정해야 한다.
 
-따라서 **1) Input Shape 변경, 2) 뒷 단의 DNN Layer 변경** 등이 필요하다.
+따라서 **1) Input Shape 변경, 2) DNN Layer 변경** 등이 필요하다.
 
 <br>
 
@@ -107,41 +107,51 @@ https://ichi.pro/ko/geomto-vggnet-ilsvrc-2014ui-1-wi-jun-useung-imiji-bunlyu-use
 ## 3) 전이 학습 방법
 > 전이 학습은 사전 학습된 모델을 그대로 가져와 학습하는 방법과 부분적으로 가져와 사용하는 방법이 있다.<br>
 
-### (1) Feature Extraction
+### (1) 
+
+### (2) 특성 추출(Feature Extraction)
 > 사전 학습된 모델을 사용하여 <a href="https://gilbertlim.github.io/deep%20learning/dl_cnn/">Feature Extraction</a> 목적으로 사용하는 방법
 
 CNN은 Feature Extraction + Classification 구조로 되어 있다.
 
-ImageNet 데이터를 사용한 모델들은 1000개의 클래스를 분류하도록 되어있기 때문에 뒷단의 DNN Layer를 변경해야 한다. 
+특성 추출은 사전 학습된 모델의 파라미터를 재사용하는 방법으로, 이미 학습된 파라미터를 다시 사용하겠다는 의미이다(**학습이 아님**).
 
-사전 학습된 모델의 Parameter를 재사용하여 Feature Extraction하고(**학습이 아님**), 
+즉, 내가 입력한 이미지가 이미 다른 모델에 의해 학습된 파라미터에 의해 특성이 추출되는 것이다.
 
-이를 Input으로 사용할 Classification 부분(DNN)은 클래스 개수에 맞춰 새로 정의 하여 사용하는 방법이다.
+ImageNet 데이터를 사용하여 만들어진 모델들은 1000개의 클래스를 분류하도록 되어있기 때문에
+
+특성 추출을 사용하기 위해서는 자신이 만들 모델의 목적에 맞게 DNN Layer를 변경해서 사용해야 한다.
 
 <br>
 
-### (2) Fine Tuning
+### (3) 미세 조정(Fine Tuning)
 > 사전 학습된 모델을 미세하게 튜닝하여 재학습하는 방법
 
-사전 학습된 모델의 일부를 수정하여 재학습하는 방법이다.
+특성 추출이 사전 학습된 모델의 파라미터를 전부 그대로 가져왔다면 
 
-주로 모델의 뒷 단의 Layer를 수정하여 사용한다.
+미세 조정은 필요한 부분만 가져오고 나머지는 조정하여 사용하는 방법이다.
 
-앞 단의 Layer보다 뒷 단에 있는 Layer의 Feature Map이 더 많은 특징을 포함하고 있기 때문에 뒷 단의 Layer를 수정한다.
+앞 단 Layer보다 **말단 Layer의 Feature Map이 더 많은 특징을 포함**하고 있기 때문에
+
+주로 모델의 Feature Extraction 단계에서 말단 Layer를 조정한다.
+
+말 단 Feature Map에는 "우리가 준비한 이미지의 특성을 좀 더 반영하겠다" 라는 것이다.
+
+DNN Layer는 Feature Extaction과 마찬가지로 분류 목적에 맞게 새로 정의하여 재학습한다.
 
 <br>
 
-그대로 사용할 Layer는 Frozen(trainable = True)시키고, 변경할 Layer는 Unfrozen(trainable = False)시켜 사용한다.
+그대로 사용할 Layer는 Frozen(trainable = True)시키고, 변경할 Layer는 Unfrozen(trainable = False)하여 사용한다.
 
-Layer가 A > B > C 일 때, 
+Layer가 A > B > C > D > E일 때, 
 
-A만 그대로 사용하고 나머지를 수정하려면 수정하려면, B를 Unfrozen 시키면 모델에서 Frozen된 A만 가져온다.
+A > B > C 를 그대로 사용하고 나머지를 수정하려면 수정하려면, D를 Unfrozen 시키면 모델에서 Frozen된 A > B > C만 가져온다.
 
 <br>
 
 이미 학습된 모델의 일부를 가져와서 재학습하는 것이므로, 오차 함수의 **학습률(Learning Rate)을 낮게 주어야 한다.**
 
-이미 학습된 모델은 경사하강법에 의해 이미 Error가 최소가 되게끔 파라미터들이 학습되어 있다.
+이미 학습된 모델은 경사하강법에 의해 이미 Error가 최소가 되게끔 파라미터가 학습되어 있다.
 
 이러한 모델을 다시 학습할 때 학습률을 크게 준다면 에러가 커지는 방향으로 발산하는 문제가 생긴다.
 
