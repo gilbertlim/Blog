@@ -161,3 +161,4 @@ A > B > C 를 그대로 사용하고 나머지를 수정하려면 수정하려�
 - <a href="https://colab.research.google.com/drive/1lElwqN_3hbV2fJVXmT7SYYzWcWJhbGNV?usp=sharing">Cats and Dogs 분류 - VGG 16 Feature Extraction</a>
 - <a href="https://colab.research.google.com/drive/1Oi8_W6S0Wlc6LLoVpKXhNIT9amTRHeIb?usp=sharing">Cats and Dogs 분류 - VGG 16 Fine Tuning</a>
 - <a href="https://drive.google.com/file/d/1_hjxCj_EMbL5JxY9ei3kuKQvrQWy4YJB/view?usp=sharing">CNN 모델의 Feature Map 생성 과정 시각화</a>
+- <a href="https://colab.research.google.com/drive/1G69Eqa5S00XsRcB9Onr7J2RiCTAkxjQN?usp=sharing">MobileNetV2</a>

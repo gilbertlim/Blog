@@ -87,3 +87,8 @@ https://devkor.tistory.com/entry/CS231n-11-Detection-and-Segmentation
 https://github.com/zzsza/Deep_Learning_starting_with_the_latest_papers/blob/master/Lecture_Note/03.%20CNN%20Application/12.Image-Captioning.md
 
 - 예 : 어느 부위에 종양이 몇 개 있습니다.
+
+<br>
+
+## 실습
+<a href="https://colab.research.google.com/drive/15rPRIP6_DTDHO36byqcKZBqMydwCzYbq?usp=sharing">Image Segmentation</a>
