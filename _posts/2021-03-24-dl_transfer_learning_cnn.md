@@ -107,9 +107,7 @@ https://ichi.pro/ko/geomto-vggnet-ilsvrc-2014ui-1-wi-jun-useung-imiji-bunlyu-use
 ## 3) 전이 학습 방법
 > 전이 학습은 사전 학습된 모델을 그대로 가져와 학습하는 방법과 부분적으로 가져와 사용하는 방법이 있다.<br>
 
-### (1) 
-
-### (2) 특성 추출(Feature Extraction)
+### (1) 특성 추출(Feature Extraction)
 > 사전 학습된 모델을 사용하여 <a href="https://gilbertlim.github.io/deep%20learning/dl_cnn/">Feature Extraction</a> 목적으로 사용하는 방법
 
 CNN은 Feature Extraction + Classification 구조로 되어 있다.
@@ -124,7 +122,7 @@ ImageNet 데이터를 사용하여 만들어진 모델들은 1000개의 클래�
 
 <br>
 
-### (3) 미세 조정(Fine Tuning)
+### (2) 미세 조정(Fine Tuning)
 > 사전 학습된 모델을 미세하게 튜닝하여 재학습하는 방법
 
 특성 추출이 사전 학습된 모델의 파라미터를 전부 그대로 가져왔다면 
