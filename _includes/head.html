@@ -2,6 +2,9 @@
 
 {% include seo.html %}
 
+<!-- google adsense code -->
+<script data-ad-client="ca-pub-4530574365331251" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 {% unless site.atom_feed.hide %}
   <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 {% endunless %}
