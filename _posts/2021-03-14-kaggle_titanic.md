@@ -80,3 +80,8 @@ Today I learned(TIL) will be updated at <a href="">my kernel</a>.
    - Hyper-Parameter Tuning for AdaBoost
 2. Confusion Matrix for the Best Model
    - Feature Importance
+   
+### Sun Mar 28
+- Finish 'EDA To Prediction(DieTanic)' kernel.
+- Add a few contents by referring to other blogs.
+- I will restart with the next kernel.
