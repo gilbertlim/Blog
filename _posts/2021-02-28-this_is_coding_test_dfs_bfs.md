@@ -147,7 +147,7 @@ DFS/BFS : 그래프(Graph) 탐색 알고리즘
 - 노드(Node)와 간선(Edge)로 표현됨
     - 노드 = 정점(Vertex)
 
-![](/assets/images/posts/algorithm/graph.png)
+![](/assets/images/posts/algorithm/this_is_coding_test/graph.png)
 
 - 그래프 탐색
     - 하나의 노드를 시작으로 다수의 노드를 방문하는 것
@@ -158,13 +158,13 @@ DFS/BFS : 그래프(Graph) 탐색 알고리즘
         - 2차원 리스트로 구현
         - 연결되어있지 않는 노드는 무한(987654321)으로 초기화
 
-        ![](/assets/images/posts/algorithm/Adjacency-matrix.png)
+        ![](/assets/images/posts/algorithm/this_is_coding_test/Adjacency-matrix.png)
 
     - 인접 리스트(Adjacency List) : 리스트로 그래프의 연결관계를 표현하는 방식
         - 모든 노드에 연결된 노드에 대한 정보를 차례대로 연결하여 저장
         - 2차원 리스트로 구현(`append((노드, 거리))`)
 
-        ![](/assets/images/posts/algorithm/Adjacency-list.png)
+        ![](/assets/images/posts/algorithm/this_is_coding_test/Adjacency-list.png)
 
     - 인접 행렬 vs 인접 리스트
         - 메모리 측면
@@ -220,7 +220,7 @@ print(list_graph) # [[(1, 7), (2, 5)], [(0, 7)], [(0, 5)]]
     - 인접한 노드 중, 방문하지 않은 노드가 여러개 있으면 **번호가 낮은 순서부터 처리(관행적)**
 - 예제
   
-    ![](/assets/images/posts/algorithm/dfs.png)
+    ![](/assets/images/posts/algorithm/this_is_coding_test/dfs.png)
 
 #### 동작 방식
 
@@ -268,7 +268,7 @@ dfs(graph, 1, visited)
     3. 2번의 과정을 더 이상 수행할 수 없을 때까지 반복한다.
 - 예제
 
-    ![](/assets/images/posts/algorithm/bfs.png)
+    ![](/assets/images/posts/algorithm/this_is_coding_test/bfs.png)
 
 ```python
 from collections import deque
@@ -308,7 +308,7 @@ graph = [
 # 각 노드가 방문된 정보를 리스트 자료형으로 표현(1차원 리스트)
 visited = [False] * 9 # [False, False, ...]
 
-# 정의된 dfs 함수 호출
+# 정의된 bfs 함수 호출
 bfs(graph, 1, visited)
 # 1 2 3 8 7 4 5 6
 ```
@@ -384,4 +384,65 @@ for i in range(n): # 0, 1, 2
 
 print(result)
 # 3
+```
+
+<br>
+
+> 미로 탈출
+
+동빈이는 N * M 크기의 직사각형 형태의 미로에 갇혀 있다.
+미로에는 여러 마리의 괴물이 있어 이를피해 탈출해야한다.
+동빈이의 위치는 (1, 1)이고 미로의 출구는 (N, M)의 위치에 존재하며 한 번에 한 칸씩 이동할 수 있다.
+이때 괴물이 있는 부분은 0으로, 괴물이 없는 부분은 1로 표시되어 있다.
+미로는 반드시 탈출할 수 있는 형태로 제시된다. 이때 동빈이가 탈출하기 위해 움직여야 하는 최소 칸의 개수를 구하시오.
+칸을 셀 떄는 시작 칸과 마지막 칸을 모두 포함해서 계산한다.
+
+- 시간 제한 : 1초
+- 메모리 제한 : 128MB
+- 입력 조건
+    - 첫째 줄에 두 정수 N, M(4 <= N, M <= 200)이 주어집니다. 다음 N개의 줄에는 각각 M개의 정수(0혹은 1)로 미로의 정보가 주어진다. 각각의 수들은 공백 없이붙어서 입력으로 제시된다. 또한 시작 칸과 마지막 칸은 항상 1이다.
+
+-> bfs 를 사용하면 효과적으로 해결할 수 있는 문제
+
+```python
+from collections import deque
+
+n, m = map(int, input().split())
+graph = []
+
+for i in range(n):
+    graph.append(list(map(int, input())))
+# 5 6
+# 101010
+# 111111
+# 000001
+# 111111
+# 111111    
+    
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
+
+def bfs(x, y):
+    queue = deque()
+    queue.append((x,y))
+
+    while queue: # 큐가 빌때까지 반복
+        x, y = queue.popleft()
+
+        # 현재 위치에서 네 방향으로 위치 확인
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+
+            if nx < 0 or ny < 0 or nx >=n or ny >= m: # 범위를 벗어난경우 무시
+                continue
+            if graph[nx][ny] == 0: # 벽인 경우 무시
+                continue
+            if graph[nx][ny] == 1:
+                graph[nx][ny] = graph[x][y] + 1 # 이동한 노드마다 값을 +1 하여 이동횟수 계산
+                queue.append((nx, ny))
+    return  graph[n - 1][m - 1] # Finish 노드 값 반환
+
+print(bfs(0, 0))
+# 10
 ```
