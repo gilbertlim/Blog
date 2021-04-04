@@ -12,6 +12,8 @@ use_math: true
 - 상황에 적절한 정렬 알고리즘을 사용할 수 있어야 함
 - 오름 차순으로 정렬하는 방법만 다룰 예정임(내림차순은 오름차순 정렬된 결과를 Reverse하면 됨, $O(N)$) 
 
+<br>
+
 ### 문제 유형
 > 문제에서 별도의 요구사항이 없다면 단순히 정렬해야 하는 상황에서는 **기본 정렬 라이브러리**를 사용하고,
 > 
@@ -28,6 +30,8 @@ use_math: true
 3. **더 빠른** 정렬이 필요한 문제
    - **계수 정렬($O(N + K)$)** 등 다른 알고리즘 또는 기존 알고리즘을 개선하여 풀이
 
+<br>
+
 ### 1. 선택 정렬(Selection Sort)
 > 가장 작은 데이터를 선택해 맨 앞의 데이터와 바꾸고, 그 다음 작은 데이터를 선택해 앞에서 두 번째 데이터와 바꾸는 방법
 
@@ -35,6 +39,10 @@ use_math: true
 - 시간 복잡도 : $O(N^2)$
 - 데이터 개수가 많아지면 비효율적인 방법임
   - 데이터 개수에 따른 수행 시간 : 선택 정렬 > 퀵 정렬 > 기본 정렬 라이브러리
+- 예
+    
+    ![선택 정렬(Selection Sort)](/assets/images/posts/algorithm/this_is_coding_test/selection.png)
+
 - 코드
     
     ```python
@@ -53,6 +61,8 @@ use_math: true
     # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     ```
 
+<br>
+
 ### 2. 삽입 정렬(Insertion Sort)
 > 데이터를 하나씩 확인하며 각 데이터를 적절한 위치에 삽입하는 방법
 
@@ -61,19 +71,25 @@ use_math: true
 - 시간 복잡도
   - $O(N^2)$
   - 거의 정렬되어 있는 상태라면 퀵정렬 등 다른 알고리즘 보다 더 나을 수 있음 : $O(N)$
+- 예
+    
+    ![삽입 정렬(Insertion Sort)](/assets/images/posts/algorithm/this_is_coding_test/insertion.png)
+
 - 코드
 
     ```python
     array = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8]
     
     for i in range(1, len(array)): # 1 ~ 9
-        for j in range(i, 0, -1): # i ~ 1, range(start, stop, step) : start부터 stop 인덱스 전까지 step만큼 증 또는 감
+        for j in range(i, 0, -1): # i ~ 1, range(start, stop, step) : start부터 stop 인덱스 전까지 step만큼 증 또는 감소
             if array[j] < array[j - 1]: # j끼리 비교하여 원소 위치 스와프
                 array[j], array[j - 1] = array[j - 1], array[j]
             else:
                 break
     print(array)
     ```
+
+<br>
 
 ### 3. 퀵 정렬(Quick Sort)
 > 기준 데이터를 설정하고 그 기준보다 큰 데이터와 작은 데이터의 위치를 바꾸는 방법
@@ -96,9 +112,9 @@ use_math: true
         - 파트 3 : 피벗을 기준으로 오른쪽을 나눠서 정렬하는 파트
             - 파트 1과 같이 동일한 방법으로 진행
             - 리스트에 데이터가 1개만 남아 있으면 종료
-    - 예
+- 예
     
-    ![](/assets/images/posts/algorithm/quick_sort.png)    
+    ![](/assets/images/posts/algorithm/this_is_coding_test/quick_sort.png)    
 
 - 시간 복잡도
   - $O(NlogN)$
@@ -159,6 +175,8 @@ use_math: true
     # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     ```
 
+<br>
+
 ### 4. 계수 정렬(Count Sort)
 > 특정 조건이 부합할 때만 사용할 수 있지만, 매우 빠른 정렬 알고리즘
 
@@ -178,6 +196,14 @@ use_math: true
 - 시간 복잡도 : O(N + K), 데이터 최댓값 : K
 - 공간 복잡도 : O(N + K)
 - 기수 정렬(Radix Sort)과 같이 가장 빠른 정렬 알고리즘
+- 예
+
+    <br>
+    
+    ![선택 정렬(Selection Sort)](/assets/images/posts/algorithm/this_is_coding_test/count.png)
+    
+    <br>
+
 - 코드
     
     ```python
@@ -192,6 +218,8 @@ use_math: true
         for j in range(count[i]):
             print(i, end= " ")
     ```
+
+<br>
 
 ### 5. 파이썬의 정렬 라이브러리(내장 라이브러리)
 > 이미 만들어진 라이브러리를 이용하여 정렬하는 방법
@@ -249,7 +277,9 @@ use_math: true
         vdict = sorted(dict.values())
         print(vdict) # [1, 2, 3, 4]
         ```
-  
+
+<br>
+
 ## 실전 문제
 
 > 위에서 아래로
@@ -268,6 +298,10 @@ use_math: true
 ```python
 # N 입력 받기
 n = int(input())
+# 3
+# 15
+# 27
+# 12
 
 # N개의 정수를 입력 받아 리스트에 저장
 array = []
@@ -280,4 +314,94 @@ array = sorted(array, reverse=True)
 # 정렬이 수행된 결과를 출력
 for i in array:
     print(i, end=' ')
+# 27 15 12
+```
+
+<br>
+
+> 성적이 낮은 순서로 학생 출력하기
+
+N명의 학생의 성적 정보가 있다. 학생 정보는 학생의 이름과 학생의 성적으로 구분된다. 각 학생의 이름과 성적 정보가 주어졌을 때 성적이 낮은 순서대로 학생의 이름을 출력하는 프로그램을 작성하시오.
+
+- 시간 제한 : 1초
+- 메모리 제한 : 128MB
+- 입력 조건
+    - 첫 번째 줄에 학생의 수 N이 입력된다. (1 <= N <= 100,000)
+    - 두 번째 줄 부터 N+1 번째 줄에는 학생의 이름을 나타내는 문자열 A와 학생의 성적을 나타내는 정수 B가 공백으로 구분되어 입력된다. 문자열 A의 길이와 학생의 성적은 100 이하의 자연수이다.
+
+-> 튜플로 저장 후 인덱스 1에 위치한 값을 기준으로 정렬하고, 인덱스 0의 값을 순서대로 출력하면 된다.
+
+```python
+n = int(input())
+# 2
+# 홍길동 95
+# 이순신 77
+
+array = []
+for i in range(n):
+    input_data = input().split()
+    array.append((input_data[0], int(input_data[1])))
+
+array = sorted(array, key=lambda student: student[1])
+
+for student in array:
+    print(student[0], end=' ')
+# 이순신, 홍길동
+```
+
+<br>
+
+> 두 배열의 원소 교체
+
+동빈이는 두 개의 배열 A와 B를 가지고 있다. 두 배열은 N개의 원소로 구성되어 있으며, 배열의 원소는 모두 자연수이다. 
+동빈이는 최대 K 번의 바꿔치기 연산을 수행할 수 있는데, 바꿔치기 연산이란 배열 A에 있는 원소 하나와 배열 B에 있는 원소 하나를 골라서 두 원소를 서로 바꾸는 것을 말한다. 
+동빈이의 최종 목표는 배열 A의 모든 원소의 합이 최대가 되도록 하는 것이며, 여러분은 동빈이를 도와야한다.
+
+N, K, 그리고 배열 A와 B의 정보가 주어졌을 때, 최대 K 번의 바꿔치기 연산을 수행하여 만들 수 있는 배열 A의 모든 원소의 합의 최댓값을 출력하는 프로그램을 작성하시오.
+
+예를 들어 N = 5, K = 3이고, 배열 A와 B가 다음과 같다고 하자.
+
+- 배열 A = [1, 2, 5, 4, 3]
+- 배열 B = [5, 5, 6, 6, 5]
+
+이 경우, 다음과 같이 세 번의 연산을 수행할 수 있다.
+
+- 연산 1) 배열 A의 원소 '1'과 배열 B의 원소 '6'을 바꾸기
+- 연산 2) 배열 A의 원소 '2'와 배열 B의 원소 '6'을 바꾸기
+- 연산 3) 배열 A의 원소 '3'과 배열 B의 원소 '5'를 바꾸기
+
+세 번의 연산 이후 배열 A와 배열 B의 상태는 다음과 같이 구성될 것이다.
+
+- 배열 A = [6, 6, 5, 4, 5]
+- 배열 B = [3, 5, 1, 2, 5]
+
+이때 배열 A의 모든 원소의 합은 26이 되며, 이보다 더 합을 크게 만들 수는 없다. 따라서 이 예시의 정답은 26이 된다.
+
+- 시간제한 : 2초
+- 메모리제한 : 128MB
+- 입력 조건
+    - 첫 번째 줄: N, K 가 공백으로 구분되어 입력 (1 <= N <= 100,000, 0 <= K <= N)
+    - 두 번째 줄: 배열 A의 원소들이 공백으로 구분되어 입력 (원소 a < 10,000,000인 자연수)
+    - 세 번째 줄: 배열 B의 원소들이 공백으로 구분되어 입력 (원소 b < 10,000,000인 자연수)
+    
+-> 기본 정렬 알고리즘과 두 원소를 교체하는 방법만 알고 있으면 쉽게 푸는 문제  
+
+```python
+n, k = map(int, input().split()) # N과 K를 입력 받기
+a = list(map(int, input().split())) # 배열 A의 모든 원소를 입력받기
+b = list(map(int, input().split())) # 배열 B의 모든 원소를 입력받기
+
+a.sort() # 배열 A는 오름차순 정렬 수행
+b.sort(reverse=True) # 배열 B는 내림차순 정렬 수행
+
+# 첫 번째 인덱스부터 확인하며, 두 배열의 원소를 최대 K번 비교
+for i in range(k):
+    # A의 원소가 B의 원소보다 작은 경우
+    if a[i] < b[i]:
+        # 두 원소를 교체
+        a[i], b[i] = b[i], a[i]
+    else: # A의 원소가 B의 원소보다 크거나 같을 때, 반복문을 탈출
+        break
+
+print(sum(a)) # 배열 A의 모든 원소의 합을 출력
 ```
