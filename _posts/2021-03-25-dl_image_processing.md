@@ -92,3 +92,4 @@ https://github.com/zzsza/Deep_Learning_starting_with_the_latest_papers/blob/mast
 
 ## 실습
 - <a href="https://colab.research.google.com/drive/15rPRIP6_DTDHO36byqcKZBqMydwCzYbq?usp=sharing">Image Segmentation</a>
+- <a href="https://drive.google.com/file/d/1mfQhackTy2nOmZ4YXxP6fs2sojXrm5u7/view?usp=sharing">YOLO</a>
