@@ -230,6 +230,7 @@ for i in x: # M X log N
 
 - 계수 정렬
   - $O(N+K)$ K: 최댓값
+
 ```python
 n = int(input())
 array = [0] * 1000001
