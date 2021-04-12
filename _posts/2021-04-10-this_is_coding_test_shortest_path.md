@@ -58,6 +58,8 @@ use_math: true
 
 #### 예
 
+<br>
+
 ![Dijkstra](/assets/images/posts/algorithm/this_is_coding_test/dijkstra.jpg)
 
 ```python
@@ -164,9 +166,9 @@ for i in range(1, n+1):
 
 ##### 예
 
-!!!!! 이미지 업데이트 필요
+<br>
 
-![Dijkstra]()
+![](/assets/images/posts/algorithm/this_is_coding_test/dijkstra-improved.jpg)
 
 ```python
 # 다익스트라 알고리즘(Dijkstra)
@@ -239,3 +241,84 @@ for i in range(1, n+1):
 <br>
 
 ## 2) 플로이드 워셜 알고리즘(Floyd-Warshall Algorithm)
+- **모든 지점에서 다른 모든 지점까지의 최단 경로를 구하는 알고리즘**
+- 단계마다 거쳐가는 노드를 기준으로 알고리즘을 수행함
+  - 다익스트라 알고리즘 처럼 매번 방문하지 않은 노드 중 최단 거리를 갖는 노드를 찾을 필요가 없음
+- 시간 복잡도 : $O(V^3), V = 노드 개수$
+
+#### 예 : 1번 노드에 대해 확인(노드 개수 : N)
+- 1번노드를 중간에 거쳐 지나가는 모든 경우를 고려하면 됨
+- A -> 1번 노드 -> B 로 가는 비용 확인 후 최단거리 갱신
+- $_{N-1} P_2$ 개의 쌍을 단계마다 반복해서 확인하면 됨
+
+#### 점화식
+- $D_{ab}\ =\ min(D_{ab},\ D_{ak}\ +\ D_{kb})$
+- 두 비용 중 더 작은 값으로 갱신
+    - $D_{ab}\ :\ A에서\ B로\ 가는\ 최소\ 비용(바로\ 이동하는\ 거리)$
+    - $D_{ak}+D_{kb}\ :\ A에서\ K를\ 거쳐\ B로\ 가는\ 비용(노드를\ 거쳐\ 이동하는\ 거리)$
+    
+<br>
+
+![](/assets/images/posts/algorithm/this_is_coding_test/floyd-warshall.jpg)
+
+<br>
+
+```python
+INF = int(1e9) # 10억
+
+n = int(input()) 
+# 4(노드 개수)
+
+m = int(input()) 
+# 7(간선 개수)
+
+graph = [[INF] * (n + 1) for _ in range(n + 1)] # 2차원 리스트 무한 값으로 생성
+
+# 자기 자신에서 자기 자신으로 가는 비용은 0으로 초기화
+for a in range(1, n + 1):
+    for b in range(1, n + 1):
+        if a == b:
+            graph[a][b] = 0
+
+# 각 간선에 대한 정보를 입력받아 그 값으로 초기화
+for _ in range(m):
+    a, b, c = map(int, input().split()) # a에서 b로 가는 비용 : c
+    graph[a][b] = c
+# 1 2 4
+# 1 4 6
+# 2 1 3
+# 2 3 7
+# 3 1 5
+# 3 4 4
+# 4 3 2
+    
+# 점화식에 따라 플로이드 워셜 알고리즘 수행
+for k in range(1, n + 1):
+    for a in range(1, n + 1):
+        for b in range(1, n + 1):
+            graph[a][b] = min(graph[a][b], graph[a][k] + graph[k][b])
+
+# 수행 결과
+for a in range(1, n + 1):
+    for b in range(1, n + 1):
+        if graph[a][b] == INF:
+            print("INFINITY", end= " ")
+        else:
+            print(graph[a][b], end=" ")
+    print()
+# 0 4 8 6
+# 3 0 7 9
+# 5 9 0 4
+# 7 11 2 0
+```
+
+<br>
+
+## 3) Dijkstra vs Floyd-Warshall
+
+||Dijkstra|Floyd-Warshall|
+|---|---|---|
+|사용 조건|한 지점에서 다른 특정 지점까지의 최단 경로를 구해야 하는 경우|모든 지점에서 다른 모든 지점까지의 최단경로를 모두 구해야 하는 경우|
+|동작 방식|1. 단계마다 최단 거리를 가지는 노드를 하나씩 반복적으로 선택<br> 2. 해당 노드를 거쳐가는 경로 확인<br> 3. 최단 거리 테이블 갱신|1. 단계마다 거쳐가는 노드를 기준으로 알고리즘 수행|
+|리스트|1차원 리스트에 최단거리 저장|2차원 리스트에 최단 거리 저장|
+|알고리즘 유형|그리디(Greedy)|다이나믹 프로그래밍(Dynamic Programming)|
