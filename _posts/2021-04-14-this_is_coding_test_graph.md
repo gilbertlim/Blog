@@ -76,7 +76,7 @@ use_math: true
 
 ### (2) 알고리즘의 동작 과정
 
-![서로소 집합 계산 알고리즘](/)
+![서로소 집합 계산 알고리즘](/assets/images/posts/algorithm/this_is_coding_test/disjoint_ex.png)
 
 <br>
 
