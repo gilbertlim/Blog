@@ -145,6 +145,8 @@ use_math: true
 ## 4) 서로소 집합을 활용한 사이클 판별
 > 서로소 집합은 무향 그래프 내 **사이클을 판별**할 수 있음
 
+<img src='/assets/images/posts/algorithm/this_is_coding_test/cycle.png' width=300 alt='서로소 집합 사이클'>
+
 - 사이클(Cycle)
   - 연결된 노드들의 루트노드가 모두 같은 상황
   - 예 : 3개의 노드가 삼각형으로 연결된 상황
@@ -209,3 +211,91 @@ use_math: true
 <br>
 
 # 3. 신장 트리(Spanning Tree)
+> 하나의 그래프가 있을 때 모든 노드를 포함하면서 사이클이 존재하지 않는 부분 그래프
+
+<img src='/assets/images/posts/algorithm/this_is_coding_test/spanning.png' width=500 alt='신장 트리(Spanning Tree)'>
+
+### 크루스칼 알고리즘(Kruskal)
+> 최소 비용으로 만들 수 있는 신장트리를 찾는 알고리즘(최소 신장 트리 알고리즘)
+
+- 가장 적은 비용으로 모든 노드를 연결
+- 그리드 알고리즘의 일종
+- 방법
+    1. 간선 데이터를 비용에 따라 오름차순 정렬
+    2. 간선을 하나씩 확인하며 현재 간선이 사이클을 발생시키는지 확인(가장 짧은 간선부터)
+
+        I.  사이클이 발생하지 않는 경우 최소 신장 트리에 포함(union함수 수행)
+
+        II.  사이클이 발생하는 경우 최소 신장트리에 포함시키지 않음
+
+    3. 모든 간선에 대하여 2번 과정 반복
+- 시간 복잡도 : $O(ElogE),\ 간선 개수 = E$
+- 예
+
+![크루스칼 알고리즘(Kruskal)](/assets/images/posts/algorithm/this_is_coding_test/kruskal.png)
+
+- 소스 코드
+
+```python
+# 특정 원소가 속한 집합을 찾기
+def find_parent(parent, x):
+    # 루트 노드가 아니라면, 루트 노드를 찾을 때까지 재귀적으로 호출
+    if parent[x] != x:
+        parent[x] = find_parent(parent, parent[x])
+    return parent[x]
+
+# 두 원소가 속한 집합을 합치기
+def union_parent(parent, a, b):
+    a = find_parent(parent, a)
+    b = find_parent(parent, b)
+    if a < b:
+        parent[b] = a
+    else:
+        parent[a] = b
+
+# 노드의 개수와 간선(Union 연산)의 개수 입력 받기
+v, e = map(int, input().split())
+# 7 9
+parent = [0] * (v + 1) # 부모 테이블 초기화하기
+
+# 모든 간선을 담을 리스트와, 최종 비용을 담을 변수
+edges = []
+result = 0
+
+# 부모 테이블상에서, 부모를 자기 자신으로 초기화
+for i in range(1, v + 1):
+    parent[i] = i
+
+# 모든 간선에 대한 정보를 입력 받기
+for _ in range(e):
+    a, b, cost = map(int, input().split())
+    # 비용순으로 정렬하기 위해서 튜플의 첫 번째 원소를 비용으로 설정
+    edges.append((cost, a, b))
+# 1 2 29
+# 1 5 75
+# 2 3 35
+# 2 6 34
+# 3 4 7
+# 4 6 23
+# 4 7 13
+# 5 6 53
+# 6 7 25
+
+# 간선을 비용순으로 정렬
+edges.sort()
+
+# 간선을 하나씩 확인하며
+for edge in edges:
+    cost, a, b = edge
+    # 사이클이 발생하지 않는 경우에만 집합에 포함
+    if find_parent(parent, a) != find_parent(parent, b):
+        union_parent(parent, a, b)
+        result += cost
+
+print(result)
+# 159
+```
+
+<br>
+
+# 4. 위상 정렬(Topology Sort)
