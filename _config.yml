@@ -16,17 +16,17 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Gilbert's Blog"
+title                    : "DevOps Syndrome"
 title_separator          : "&#124;"
-subtitle                 : "Artificial Intelligence"
+subtitle                 : "with @Accessibility"
 name                     : "Gilbert"
-description              : "공부한 내용을 포스팅하는 블로그입니다."
+description              : # "공부한 내용을 포스팅하는 블로그입니다."
 url                      : "https://gilbertlim.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/g.png"
-masthead_title           : "Gilbert's Blog"
+masthead_title           : "DevOps Syndrome"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -94,9 +94,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Gilbert(Seongjin Lim)"
+  name             : "Gilbert"
   avatar           : "/assets/images/profile.jpg"
-  bio              : "머신러닝 엔지니어를 꿈꾸고 있습니다. <br> 부족한 부분이 있다면 자유롭게 의견을 남겨주세요!"
+  bio              : "<b>DevOps Engineer</b> <br> interested in @MSA @CloudArchitect @Log"
   location         : "Republic of Korea"
   email            : "9ilbert.app@gmail.com"
   links:
