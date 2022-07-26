@@ -31,8 +31,5 @@ codekit-config.json
 _asset_bundler_cache
 _site
 
-# Format
-# Algorithm_Programmers
-2021-MM-DD-algorithm_programmers_PROBLEM_NAME.md
-# This is coding test
-2021-MM-DD-this_is_coding_test_TITLE.md
+# Customized
+_ignored
