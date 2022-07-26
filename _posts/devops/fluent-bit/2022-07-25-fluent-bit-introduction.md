@@ -3,13 +3,11 @@ title: "[Fluent-bit] Fluent-bit 개요"
 category: Fluent-bit
 ---
 
-<br><br><br>
-
 # 1. Fluent-bit ?
 
 > Fluent-bit은 Fluentd의 경량화된 로그 프로세싱 오픈소스 툴이다.
 
-![Fluent-bit Data Pipeline](/assets/images/posts/fluent-bit/flb_data_pipeline.png)
+<img src="/assets/images/posts/fluent-bit/flb_data_pipeline.png" alt="Fluent-bit Data PipeLine" width="75%" />
 
 풀어서 설명하면, 아래와 같다.
 
@@ -18,8 +16,6 @@ category: Fluent-bit
 3. Filter : 파싱된 로그를 요구사항에 맞게 필드 또는 값을 처리(추가/수정/삭제)한다.
 4. Buffer : 처리된 로그를 어디론가 보내기 위해 버퍼에 담는다(filesystem 또는 Memory)
 5. Output : 버퍼에 있는 로그를 어디론가 보낸다(ElasticSearch 또는 S3).
-
-<br>
 
 # 2. Story
 
@@ -54,8 +50,6 @@ Filter - Rewrite Tag, Filesystem을 사용한 Buffering, Out Of Memory 등 몇 �
 Fluentd와 달리 참고할 문서가 많지 않았고, 한창 개발 중인 Open Source다 보니 해결되지 않은 오류가 많았다. 공식 Repository에 가보니 수많은 개발자들이 아우성하고 있었다.
 
 또, 내 기준에 Documentation이 불친절하여 이것 저것 테스트하느라 많은 시행착오를 겪었다.
-
-<br>
 
 # 3. Installation
 
