@@ -30,7 +30,14 @@ comments: true
   </section>
 {% endfor %}
 
-{% if page.comments != false %}
-  <!-- {% include disqus_comments.html %} -->
-    {% include utterances_comments.html %}
-{% endif %}
+<!-- {% if page.comments != false %}
+  {% include disqus_comments.html %}
+{% endif %} -->
+<script src="https://utteranc.es/client.js"
+        repo="gilbertlim/blog-comments"
+        issue-term="pathname"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
