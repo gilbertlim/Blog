@@ -65,38 +65,40 @@ Fluentd와 달리 참고할 문서가 많지 않았고, 한창 개발 중인 Ope
 
 <br>
 
+## MacOS
+
 개발 시에는 매번 CI/CD를 태우기 어려우니 로컬에서 테스트할 필요가 있다.
 
 Mac OS에 간단히 설치해보자.
 
-1.Dependency 설치
+### 1. Dependency 설치
 
 ```
 brew install git cmake openssl bison
 ```
 
-2.소스 다운로드
+### 2. 소스 다운로드
 
 ```
 git clone https://github.com/fluent/fluent-bit
 cd fluent-bit
 ```
 
-3.버전 선택 : 
+### 3. 버전 선택 : 
 
 ```
 git tag -l # 원하는 버전 확인
 git checkout v1.9.6
 ```
 
-4.빌드 준비
+### 4. 빌드 준비
 
 ```bash
 export OPENSSL_ROOT_DIR=`brew --prefix openssl`
 export PATH=`brew --prefix bison`/bin:$PATH
 ```
 
-5.빌드
+### 5. 빌드
 
 ```bash
 cmake -DFLB_DEV=on -DCMAKE_INSTALL_PREFIX=/opt/fluent-bit ../
