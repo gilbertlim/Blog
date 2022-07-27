@@ -38,7 +38,7 @@ layout: default
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
                 
-              <div>
+              <div style="margin-top: 100px;">
                     <!-- Google AdSense -->
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4530574365331251"
                         crossorigin="anonymous"></script>
@@ -53,7 +53,6 @@ layout: default
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
-                
             </nav>
           </aside>
         {% endif %}
@@ -88,6 +87,22 @@ layout: default
           {% include archive-single.html type="grid" %}
         {% endfor %}
       </div>
+
+      <div>
+        <!-- Google AdSense -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4530574365331251"
+        crossorigin="anonymous"></script>
+        <!-- 하단1 -->
+        <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4530574365331251"
+        data-ad-slot="4716839470"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
     </div>
   {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
   {% elsif page.id and page.related %}
@@ -101,22 +116,22 @@ layout: default
           {% include archive-single.html type="grid" %}
         {% endfor %}
       </div>
+
+      <div>
+        <!-- Google AdSense -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4530574365331251"
+        crossorigin="anonymous"></script>
+        <!-- 하단1 -->
+        <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4530574365331251"
+        data-ad-slot="4716839470"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
     </div>
   {% endif %}
-
-  <div>
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4530574365331251"
-    crossorigin="anonymous"></script>
-    <!-- 하단1 -->
-    <ins class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-4530574365331251"
-    data-ad-slot="4716839470"
-    data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
 </div>
