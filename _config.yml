@@ -30,9 +30,9 @@ masthead_title           : "DevOps Syndrome"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : "disqus"
-  disqus:
-    shortname            : 9ilbert
+  provider               : # "disqus"
+  # disqus:
+  #   shortname            : 9ilbert
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
