@@ -5,11 +5,11 @@ category: Fluent-bit
 
 # 1. Fluent-bit ?
 
-> Fluent-bit은 Fluentd의 경량화된 로그 프로세싱 오픈소스 툴이다.
+<a href="https://docs.fluentbit.io/manual/">https://docs.fluentbit.io/manual/<a>
+
+> Fluent-bit은 Fluentd 보다 경량화된 로그 프로세싱 오픈소스 툴이다.
 
 <img src="/assets/images/posts/fluent-bit/flb_data_pipeline.png" alt="Fluent-bit Data PipeLine" width="75%" />
-
-풀어서 설명하면, 아래와 같다.
 
 1. Input : 특정 로그가 생성될 때마다 읽어 들인다(수집).
 2. Parser : 수집된 로그를 원하는 형식(정규식)에 맞게 필드/값 형태로 변환한다.
@@ -29,9 +29,9 @@ Fluent-bit을 사용하게된 계기는 Agent가 가볍고, Fluentd보다 사용
 
 ## How
 
-약 1년 동안 Fluent-bit을 통해 Nginx, EKS 로그를 AWS OpenSearch(ElasticSearch), AWS S3로 적재했다.
+약 1년 동안 Fluent-bit을 통해 Nginx, EKS container 로그를 AWS OpenSearch(ElasticSearch), AWS S3로 적재했다.
 
-Fluent-*으로 Pipeline을 구축하고 ElasticSearch에 저장 한 후에 Kibana로 시각화했다(EFK Stack).
+Fluent-*으로 Pipeline을 구축하고 ElasticSearch에 저장 한 후에 Kibana로 시각화했다(EFK).
 
 Kibana로 대시보드를 구축하고, 상용 배포 시 현재 Traffic은 어떻고 배포 중에 Error가 발생하는 지 모니터링하는 데 활용했다.
 
@@ -43,7 +43,7 @@ Error가 발생되면, 의사결정에 따라 배포를 유보하거나 중단�
 
 Filter - Rewrite Tag, Filesystem을 사용한 Buffering, Out Of Memory 등 몇 가지 이슈가 있었다.
 
-## User eXperience
+<br>
 
 "이런 기능이 있었으면 좋겠는 데?" 하는 기능은 웬만큼 다 있다.
 
@@ -53,14 +53,59 @@ Fluentd와 달리 참고할 문서가 많지 않았고, 한창 개발 중인 Ope
 
 # 3. Installation
 
-설치는 아래 링크에서 원하는 환경을 선택하여 설치하면 된다.
+공식 링크에서 원하는 환경을 선택하여 설치하면 된다.
 
 <a href="https://docs.fluentbit.io/manual/installation/getting-started-with-fluent-bit">https://docs.fluentbit.io/manual/installation/getting-started-with-fluent-bit</a>
 
-Intel Processor MacOS, EC2(Ubuntu, Amazon Linux), EKS DaemonSet에 설치했고, 설치하는데 큰 문제는 없었다.
+다음 환경에서 설치하는 데 큰 문제는 없었다.
 
-## MacOS
+- Intel Processor MacOS
+- EC2(Ubuntu, Amazon Linux) + Jenkins
+- EKS DaemonSet + Helm, ArgoCD
 
-## EC2
+<br>
 
-## EKS
+개발 시에는 매번 CI/CD를 태우기 어려우니 로컬에서 테스트할 필요가 있다.
+
+Mac OS에 간단히 설치해보자.
+
+1.Dependency 설치
+
+```
+brew install git cmake openssl bison
+```
+
+2.소스 다운로드
+
+```
+git clone https://github.com/fluent/fluent-bit
+cd fluent-bit
+```
+
+3.버전 선택 : 
+
+```
+git tag -l # 원하는 버전 확인
+git checkout v1.9.6
+```
+
+4.빌드 준비
+
+```bash
+export OPENSSL_ROOT_DIR=`brew --prefix openssl`
+export PATH=`brew --prefix bison`/bin:$PATH
+```
+
+5.빌드
+
+```bash
+cmake -DFLB_DEV=on -DCMAKE_INSTALL_PREFIX=/opt/fluent-bit ../
+sudo make -j 16
+sudo make install
+```
+
+6.설치
+
+```bash
+sudo make install
+```
