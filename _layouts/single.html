@@ -60,6 +60,20 @@ layout: default
     {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
       {% include comments.html %}
     {% endif %}
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4530574365331251"
+        crossorigin="anonymous"></script>
+    <!-- 하단1 -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4530574365331251"
+        data-ad-slot="4716839470"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </article>
 
   {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
@@ -86,18 +100,4 @@ layout: default
       </div>
     </div>
   {% endif %}
-
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4530574365331251"
-        crossorigin="anonymous"></script>
-    <!-- 하단1 -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-4530574365331251"
-        data-ad-slot="4716839470"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
 </div>
