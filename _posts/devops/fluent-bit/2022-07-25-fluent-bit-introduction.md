@@ -9,7 +9,7 @@ category: Fluent-bit
 
 > Fluent-bit은 Fluentd 보다 경량화된 로그 프로세싱 오픈소스 툴이다.
 
-<img src="/assets/images/posts/fluent-bit/flb_data_pipeline.png" alt="Fluent-bit Data PipeLine" width="75%" />
+<img src="/assets/images/posts/devops/flb_data_pipeline.png" alt="Fluent-bit Data PipeLine" width="75%" />
 
 1. Input : 특정 로그가 생성될 때마다 읽어 들인다(수집).
 2. Parser : 수집된 로그를 원하는 형식(정규식)에 맞게 필드/값 형태로 변환한다.
@@ -49,65 +49,4 @@ Filter - Rewrite Tag, Filesystem을 사용한 Buffering, Out Of Memory 등 몇 �
 
 Fluentd와 달리 참고할 문서가 많지 않았고, 한창 개발 중인 Open Source다 보니 해결되지 않은 오류가 많았다. 공식 Repository에 가보니 수많은 개발자들이 아우성하고 있었다.
 
-또, 내 기준에 Documentation이 불친절하여 이것 저것 테스트하느라 많은 시행착오를 겪었다.
-
-# 3. Installation
-
-공식 링크에서 원하는 환경을 선택하여 설치하면 된다.
-
-<a href="https://docs.fluentbit.io/manual/installation/getting-started-with-fluent-bit">https://docs.fluentbit.io/manual/installation/getting-started-with-fluent-bit</a>
-
-다음 환경에서 설치하는 데 큰 문제는 없었다.
-
-- Intel Processor MacOS
-- EC2(Ubuntu, Amazon Linux) + Jenkins
-- EKS DaemonSet + Helm, ArgoCD
-
-<br>
-
-## MacOS
-
-개발 시에는 매번 CI/CD를 태우기 어려우니 로컬에서 테스트할 필요가 있다.
-
-Mac OS에 간단히 설치해보자.
-
-### 1. Dependency 설치
-
-```
-brew install git cmake openssl bison
-```
-
-### 2. 소스 다운로드
-
-```
-git clone https://github.com/fluent/fluent-bit
-cd fluent-bit
-```
-
-### 3. 버전 선택 : 
-
-```
-git tag -l # 원하는 버전 확인
-git checkout v1.9.6
-```
-
-### 4. 빌드 준비
-
-```bash
-export OPENSSL_ROOT_DIR=`brew --prefix openssl`
-export PATH=`brew --prefix bison`/bin:$PATH
-```
-
-### 5. 빌드
-
-```bash
-cmake -DFLB_DEV=on -DCMAKE_INSTALL_PREFIX=/opt/fluent-bit ../
-sudo make -j 16
-sudo make install
-```
-
-6.설치
-
-```bash
-sudo make install
-```
+또, Documentation이 불친절하여 이것 저것 테스트하느라 많은 시행착오를 겪었다.
