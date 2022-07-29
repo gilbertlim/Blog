@@ -43,7 +43,12 @@ Nginx 로그를 Fluent-bit으로 처리하기 전에 Nginx부터 설치한다.
 
 ### Fluent-bit Config 작성
 
-원하는 경로에 conf를 작성한다.
+원하는 경로에 config를 작성한다.
+
+<a href="https://github.com/gilbertlim/fluent-bit/tree/main/tutorial/nginx">소스 코드</a>
+
+nginx access.log가 한 줄씩 생성될 때 마다 Fluent-bit에서 읽고 작성된 정규식을 거쳐 필드/값 형태로 파싱된다.
+파싱된 로그는 standard output으로 출력된다.
 
 fluent-bit.conf
 ```
