@@ -82,13 +82,11 @@ fluent-bit.conf
 parsers.conf
 ```
 [PARSER]
-    Name        nginx
-    # 정규식으로 필드/값을 파싱
-    Format      regex
-    Regex       ^(?<remote>[^ ]*) (?<host>[^ ]*) (?<user>[^ ]*) \[(?<time>[^\]]*)\] "(?<method>\S+)(?: +(?<path>[^\"]*?)(?: +\S*)?)?" (?<code>[^ ]*) (?<size>[^ ]*)(?: "(?<referer>[^\"]*)" "(?<agent>[^\"]*)")
-    Time_Key    time # time으로 사용할 필드명 
-    Time_Format %d/%b/%Y:%H:%M:%S %z # time format
-    Types       size:integer # size 필드는 integer 타입으로 지정, 정의되지 않은 필드는 모두 string 
+    Name     nginx
+    Format   regex # 정규식으로 필드/값을 파싱
+    Regex    ^(?<http_x_forwarded_for>[^ ]*) [^ ]* (?<remote_user>[^ ]*) \[(?<time>[^\]]*)\] \\?\"(?<request>(?<method>[A-Z]*) ([\/|\w]*.*) ([^\\]*)?\\?)\" (?<status>[^ ]*) (?<body_bytes_sent>[^ ]*) (?<request_time>[^ ]*) (?<host>[^ ]*) (?<server_addr>[^ ]*) (?<api>[^ ]*)$
+    Time_Key time
+    Types    body_bytes_sent:integer request_time:float # 정의되지 않은 필드는 모두 string
 ```
 
 <br>
@@ -118,7 +116,7 @@ fluent-bit.conf
 [INPUT]
     Name tail
     # Path /usr/local/etc/nginx/access.log
-    Path ~/Dev/Fluent-bit/fluent-bit-repo/tutorial/nginx/test.log
+    Path ./test.log
     Tag  nginx
     Parser nginx
 
