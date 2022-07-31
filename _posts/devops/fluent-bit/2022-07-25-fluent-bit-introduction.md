@@ -50,3 +50,12 @@ Filter - Rewrite Tag, Filesystem을 사용한 Buffering, Out Of Memory 등 몇 �
 Fluentd와 달리 참고할 문서가 많지 않았고, 한창 개발 중인 Open Source다 보니 해결되지 않은 오류가 많았다. 공식 Repository에 가보니 수많은 개발자들이 아우성하고 있었다.
 
 또, Documentation이 불친절하여 이것 저것 테스트하느라 많은 시행착오를 겪었다.
+
+# So What ?
+
+Fluent-bit 사용 방법을 nginx, k8s로 분류하고, 기본/고급으로 나누어 포스팅 했다.
+
+| nginx                                                | k8s                                              |
+|------------------------------------------------------|--------------------------------------------------|
+| <a href="/fluent-bit/fluent-bit-usage-nginx/">기본</a> | <a href="/fluent-bit/fluent-bit-usage-k8s/">기본</a>          |
+| <a href="/fluent-bit/fluent-bit-advanced-usage-nginx/">고급</a>   | <a href="/fluent-bit/fluent-bit-advanced-usage-k8s/">고급</a> |

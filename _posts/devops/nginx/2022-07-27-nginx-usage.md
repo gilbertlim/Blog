@@ -42,6 +42,7 @@ http {
         server_name  localhost;
 
         access_log /usr/local/etc/nginx/access.log  main;
+        error_log /usr/local/etc/nginx/error.log;
 
         location / {
             root   html;
@@ -57,8 +58,10 @@ http {
 
 브라우저를 통해 `localhost:8080`으로 들어가면, 다음과 같은 화면이 나타난다. 그러면 성공!
 
+실무에서는 Postman과 같은 프로그램을 통해 API를 호출한다.
+
 <img src="/assets/images/posts/devops/nginx.png" alt="" width="75%" />
 
-`tail -f /usr/local/etc/nginx/access.log` 를 실행해보면 접속할 때마다 로그가 남을 것이다.
+`tail -f /usr/local/etc/nginx/access.log` 를 실행해보면 접속할 때마다 로그가 찍히게 됩니다.
 
 <img src="/assets/images/posts/devops/nginx_log.png" alt="" width="75%" />
