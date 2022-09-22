@@ -50,8 +50,3 @@ use_math: true
       - 수치 : 평균, 앞/뒤 값, ...
       - 문자 : 최빈값, 앞/뒤 값, ...
         - 바로 앞/뒤 값이 이미 결측치가 있으면 없을 때까지 이동하여 값을 찾음
-  
-<br>
-
-## 데이터 처리를 위한 Pandas 연습
-<a href="https://drive.google.com/drive/folders/1eUIauCQeshQuVmw25Ts0G8Jrxik4exyn?usp=sharing">Google Colab 참조</a>

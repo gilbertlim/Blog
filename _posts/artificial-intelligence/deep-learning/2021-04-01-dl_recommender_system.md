@@ -145,10 +145,10 @@ use_math: true
 |User3|4|<font color = 'blue'>3|<font color = 'blue'>3|2|<font color = 'blue'>5|
 |User4|<font color = 'blue'>3|2|<font color = 'blue'>5|<font color = 'blue'>2|4|
 
-<br>
+<!-- <br>
 
 ## 실습
 - <a href="https://colab.research.google.com/drive/1QRpgh1VdK05jf33GU-lsrzes25pi2Zdi?usp=sharing">Content-Based Filtering</a>
 - <a href="https://colab.research.google.com/drive/1vHBgdTVV2ThvP8mDNhEERjksAaOQ4Uy2?usp=sharing">Collaborative Filtering(KNN)</a>
 - <a href="https://drive.google.com/file/d/1OBBn5iazdvwfB_lXAC9KC6QGmPvWNHKX/view?usp=sharing">Collaborative Filtering(Latent Factor)</a>
-- <a href="https://colab.research.google.com/drive/10qA4Sma7E7qwblg3FGN8cfnKLXOuVKxv?usp=sharing">Suprise Package</a>
+- <a href="https://colab.research.google.com/drive/10qA4Sma7E7qwblg3FGN8cfnKLXOuVKxv?usp=sharing">Suprise Package</a> -->
