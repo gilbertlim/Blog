@@ -1,3 +1,7 @@
+---
+title: "[Java] ArrayList"
+category: Java
+---
 
 # ArrayList
 
