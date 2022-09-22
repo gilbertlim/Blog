@@ -11,6 +11,8 @@ category: Java
 
 타입은 인스턴스 생성 시점에 확정지어 사용함.
 
+# 관례적 명명
+
 ```java
 <T>	Type
 <E>	Element
