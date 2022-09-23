@@ -12,7 +12,7 @@ category: Java
 
 <br>
 
-ApplePredicate 객체를 익명 클래스로 선언한다. 한번 사용되거 버려지는 객체
+ApplePredicate 객체를 익명 클래스로 선언한다. (한번 사용되고 버려지는 객체)
 
 ```java
 List<Apple> applesAnonymous = filterApples(inventory, new ApplePredicate() {

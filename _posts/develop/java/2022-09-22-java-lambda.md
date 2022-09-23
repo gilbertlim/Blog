@@ -7,14 +7,15 @@ category: Java
 
 > 메서드로 전달할 수 있는 익명함수를 단순화한 것
 
-<br>
+<br> 
 
 <aside>
 ⛔ 람다식 사용 시 Interface는 함수형 인터페이스여야 한다.
 디폴트 메서드가 많더라도 추상 메서드가 1개면 함수형 인터페이스
 </aside>
 
-<br>
+<br> 
+
 ## How to Express
 
 > (람다 파라미터) → 람다 바디
@@ -74,6 +75,19 @@ CalculatorParamOne cal8 = num1 -> System.out.println("cal8.cal(num1) = " + num1)
 ```
 
 ## Anonymous class → lambda
+
+ApplePredicate
+
+> 시그니처 : methodName=test, type=Apple
+> 
+
+```java
+public interface ApplePredicate {
+    // predicate : true or false를 반환하는 함수
+
+    boolean test(Apple apple);
+}
+```
 
 as-is
 
