@@ -7,14 +7,25 @@ category: Java
 
 > 메서드로 전달할 수 있는 익명함수를 단순화한 것
 
-<br> 
-
 <aside>
 ⛔ 람다식 사용 시 Interface는 함수형 인터페이스여야 한다.
 디폴트 메서드가 많더라도 추상 메서드가 1개면 함수형 인터페이스
+
 </aside>
 
-<br> 
+<aside>
+⛔ 제네릭 파라미터에는 참조형 형식(≠ 기본형)만 사용할 수 있다.
+Byte, Integer, Object, List (≠ int, double, byte, char)
+
+기본형은 Boxing을 해서 참조형으로 변환해줘야 한다.
+
+</aside>
+
+<aside>
+⛔ Java에서 제공하는 함수형 인터페이스는 예외를 던지는 동작을 허용하지 않는다.
+예외를 던지는 람다식을 만드려면,  함수형 인터페이스를 직접 생성하거나 람다를 try/catch로 감싸야 한다.
+
+</aside>
 
 ## How to Express
 
@@ -81,12 +92,29 @@ ApplePredicate
 > 시그니처 : methodName=test, type=Apple
 > 
 
+global
+
 ```java
 public interface ApplePredicate {
     // predicate : true or false를 반환하는 함수
 
     boolean test(Apple apple);
 }
+```
+
+```java
+public List<Apple> filterApples(List<Apple> inventory, ApplePredicate p) { // 파라미터로 Interface가 들어간다.
+        List<Apple> result = new ArrayList<>();
+
+        for (Apple apple : inventory) {
+            if ( p.test(apple)) {
+                result.add(apple);
+            }
+        }
+
+        return result;
+    }
+
 ```
 
 as-is
@@ -106,9 +134,9 @@ to-be
 List<Apple> result = filterApples(inventory, (Apple apple) -> RED.toString().equals(apple.getColor()));
 ```
 
-# 함수형 인터페이스
+# Functional Interface (함수형 인터페이스)
 
-> 추상 메서드가 1개인 인터페이스
+> 추상 메서드가 1개인 인터페이스₩
 디폴트 메서드 상관 X
 > 
 
@@ -130,7 +158,29 @@ public interface Runnable {
 }
 ```
 
-# 함수 디스크립터
+## Java에서 제공하는 함수형 인터페이스 종류
+
+[https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
+
+## @FunctionalInterface
+
+> 함수형 인터페이스를 가리키는 어노테이션
+ 람다식으로 표현하기 위해 사용되는 Interface위에 해당 어노테이션을 붙이면 컴파일 타임에 에러를 잡아 준다.
+추상메서드가 1개 이상이면 에러 발생
+> 
+
+```java
+@FunctionalInterface
+public interface CalculatorParamAll {
+
+    // lambda를 사용하기 위해서는 메소드가 하나여야 한디.
+    public int cal(int num1, int num2);
+
+    public int cal2(); // 에러 발생
+}
+```
+
+# Function Descriptor (함수 디스크립터)
 
 > 함수형 인터페이스의 추상메서드 시그니처
 
@@ -165,20 +215,43 @@ doSomething(String[] y);
 doSomething(String y);
 ```
 
-## @FunctionalInterface
+# Execute Around Pattern
 
-> 함수형 인터페이스를 가리키는 어노테이션
- 람다식으로 표현하기 위해 사용되는 Interface위에 해당 어노테이션을 붙이면 컴파일 타임에 에러를 잡아 준다.
-추상메서드가 1개 이상이면 에러 발생
+> 초기화/준비 코드 → 작업 → 정리/마무리 코드 형식의 코드
 > 
 
 ```java
-@FunctionalInterface
-public interface CalculatorParamAll {
+@Component
+public class BufferedReaderMain {
 
-    // lambda를 사용하기 위해서는 메소드가 하나여야 한디.
-    public int cal(int num1, int num2);
+    ClassPathResource resource = new ClassPathResource("static/data.txt");
 
-    public int cal2(); // 에러 발생
+    @EventListener(ApplicationStartedEvent.class)
+    public void main() throws IOException {
+        System.out.println("=====ExecuteAroundPattern / Lambda =====");
+        String twoLines = processFile((BufferedReader br) -> br.readLine() + " " + br.readLine());
+
+        System.out.println("twoLines = " + twoLines);
+
+    }
+
+    public String processFile(BufferedReaderProcessor b) throws IOException {
+
+        try (BufferedReader br = new BufferedReader(new FileReader(resource.getFile().getAbsolutePath()))) {
+            return b.process(br);
+        }
+    }
+
 }
 ```
+
+```java
+@FunctionalInterface
+public interface BufferedReaderProcessor {
+    String process(BufferedReader b) throws IOException;
+}
+```
+
+# 형식 검사 / 추론 / 제약
+
+## 형식 검사
