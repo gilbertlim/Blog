@@ -1,5 +1,5 @@
 ---
-title: "[Java] Lambda"
+title: "[Java] Lambda (람다)"
 category: Java
 ---
 

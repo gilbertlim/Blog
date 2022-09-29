@@ -1,5 +1,5 @@
 ---
-title: "[Java] Anonymous Class"
+title: "[Java] Anonymous Class (익명 클래스)"
 category: Java
 ---
 

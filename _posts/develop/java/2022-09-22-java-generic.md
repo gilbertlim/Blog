@@ -1,5 +1,5 @@
 ---
-title: "[Java] Generic"
+title: "[Java] Generic (제네릭)"
 category: Java
 ---
 
