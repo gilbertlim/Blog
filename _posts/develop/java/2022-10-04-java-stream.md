@@ -145,7 +145,7 @@ public class CompareAsIs {
 }
 ```
 
-## Stream and Collection
+## Stream and Collection (스트림과 컬렉션)
 
 데이터를 언제 계싼하느냐가 가장 큰 차이
 
@@ -158,7 +158,7 @@ public class CompareAsIs {
 
 하나의 스트림에서는 딱 한번만 탐색할 수 있음
 
-## Stream Operations
+## Stream Operations (스트림 연산)
 
 데이터 소스 → 중간 연산(파이프라인 구성) → 최종 연산(파이프라인 실행 및 결과 도출)
 
@@ -188,7 +188,7 @@ public class CompareAsIs {
 | count | long(generic) | 스트림 요소 개수 반환 |
 | collect | - | 스트림을 리듀스해서 리스트, 맵, 정수 형식의 컬렉션을 만듬. |
 
-## Filtering
+## Filtering (필터링)
 
 > Predicate(불리언을 반환하는 함수)를 인수로 받아 일치하는 **모든 요소**를 포함하는 스트림을 반환
 .filter()
@@ -219,7 +219,7 @@ public class Filtering {
 }
 ```
 
-## Slicing
+## Slicing (슬라이싱)
 
 > 스트림의 요소를 선택하거나 스킵
 > 
@@ -263,7 +263,7 @@ public class Slicing {
 > .skip(n) : 처음 n개 요소 제외
 > 
 
-## Mapping
+## Mapping (매핑)
 
 > 특정 데이터 매핑 및 변환
 .map()
@@ -340,7 +340,7 @@ public class Mapping {
 }
 ```
 
-## Search and Matching
+## Search and Matching (검색)
 
 ### anyMatch
 
@@ -372,7 +372,7 @@ findFirst와 차이점이 없어 보이지만, 병렬 처리 시 가장 먼저 �
 병렬 처리 시 Stream의 순서를 고려하여 가장 앞에 있는 요소 반환
 > 
 
-## Reducing
+## Reducing (연산)
 
 > 스트림 요소를 조합해서 복잡한 질의 표현
 > 
@@ -428,7 +428,7 @@ public class Searching {
 }
 ```
 
-## Sample Code
+## Practice !
 
 ```java
 @RequiredArgsConstructor
@@ -545,10 +545,143 @@ public class Answers {
 }
 ```
 
+## Numeric Stream (숫자형 스트림)
+
+### Primitive Stream Specialization (기본형 특화 스트림)
+
+> IntStream, DoubleStream, LongStream
+> 
+
+sum, max 와 같이 숫자 관련 리듀싱 연산 수행 메서드 제공
+
+필요 시 객체 스트림으로 복원하는 기능 제공
+
+박싱 과정에서 일어나는 효율성에만 관련 있고, 추가 기능은 제공하지 않음.
+
+```java
+@Slf4j
+@Component
+public class Numeric {
+
+    @EventListener(ApplicationStartedEvent.class)
+    public void main() {
+        log.info("===== Stream / Numeric Stream =====");
+
+        List<Dish> menu = Dish.menu();
+
+        // Primitive Stream Specialization
+
+        int calories = menu.stream()
+            .mapToInt(Dish::getCalories) // InStream으로 변환
+            .sum();
+
+        OptionalInt maxCalories = menu.stream() // Optional 제공
+            .mapToInt(Dish::getCalories)
+            .max();
+
+        int maxCaloriesWithDefault = menu.stream() // Optional + Default
+            .mapToInt(Dish::getCalories)
+            .max()
+            .orElse(1);
+
+        Stream<Integer> boxedStream = menu.stream()
+            .mapToInt(Dish::getCalories)
+            .boxed(); // 특화 스트림을 일반 스트림으로 변환
+
+        // Range
+
+        OptionalInt maxValue = IntStream.rangeClosed(1, 100)
+            .max();
+        log.debug("maxValue = {}", maxValue); // 100
+
+        Stream<double[]> pythagoreanTriples = IntStream.rangeClosed(1, 100)
+            .boxed()
+            .flatMap(a -> IntStream.rangeClosed(a, 100)
+                .mapToObj(b -> new double[]{a, b, Math.sqrt(a * a + b * b)})
+                .filter(t -> t[2] % 1 == 0)
+            );
+
+        pythagoreanTriples.limit(5)
+            .forEach(v -> log.debug("pythagoreanTriples ={}", v));
+    }
+}
+```
+
+## Generate Stream (스트림 생성)
+
+스트림을 생성하는 방법
+
+- empty stream
+- nullable stream
+- infinite stream
+- value → stream
+- array → stream
+- file → stream
+
+```java
+@Slf4j
+@Component
+public class GenerateStream {
+
+    @EventListener(ApplicationStartedEvent.class)
+    public void main() {
+        log.info("===== Stream / Generate Stream =====");
+
+        // value to stream
+        Stream<String> stream = Stream.of("Modern", "Java", "In", "Action");
+        stream.map(String::toUpperCase)
+            .forEach(v -> log.debug("value v ={}", v));
+
+        // empty stream
+        Stream<String> emptyStream = Stream.empty();
+
+        // nullable Stream
+        Stream<Object> values = Stream.ofNullable(System.getProperty("home"));
+        values.forEach(v -> log.debug("nullable v = {}", v));
+
+        // Array to Stream
+        int[] numbers = {2, 3, 5, 7, 11, 13};
+        int sum = Arrays.stream(numbers).sum();
+        log.debug("sum = {}", sum);
+
+        // File to Stream
+        long uniqueWords = 0;
+        try (Stream<String> lines = Files.lines(Paths.get("src/main/java/com/megazone/modern/Stream/GenerateStream/data.txt"), Charset.defaultCharset())) {
+            uniqueWords = lines.flatMap(line -> Arrays.stream(line.split(" ")))
+                .distinct()
+                .count();
+        } catch (IOException e) {
+
+        }
+        log.debug("uniqueWords = {}", uniqueWords);
+
+        // Infinite Stream (Unbounded Stream)
+        Stream.iterate(0, n -> n + 2)
+            .limit(10) // 무한한 값을 출력하지 않도록 사용 권장
+            .forEach(v -> log.debug("v = {}", v)); // 0, 2, 4, ...
+
+        Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1], t[0] + t[1]})
+            .limit(10)
+            .forEach(t -> log.debug("fibonacci = {}", t[0]));
+
+        Stream.generate(Math::random)
+            .limit(10)
+            .forEach(v -> log.debug("random v = {}", v));
+
+    }
+}
+```
+
+data.txt
+
+```java
+a b c d e
+f g h i j
+```
 
 ---
 
-### boxed
+boxed
 
 > .boxed() : primitive 자료형을 Wrapper 클래스(객체)로 변환하는 메서드
 int → Integer
