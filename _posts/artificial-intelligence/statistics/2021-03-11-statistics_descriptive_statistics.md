@@ -161,8 +161,3 @@ https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51
 
 ##### (4) 표준편차(Standard deviation)
 > 분산의 양의 제곱근
-
-<br>
-
-## 실습
-<a href="https://colab.research.google.com/drive/1LjQmR_ojtdJTXgjjWFgFDQiAlwuP2Y3w?usp=sharing">Descriptive Statistics</a>

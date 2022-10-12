@@ -65,5 +65,3 @@ Hist_boston = boston.fit(X_train, y_train,
                          verbose=1)
 ```
 
-### 실습
-- <a href="https://colab.research.google.com/drive/1uWfvoWjiygaL9h_YKqT0Jkm4liatu6UU?usp=sharing">회귀 분석</a>

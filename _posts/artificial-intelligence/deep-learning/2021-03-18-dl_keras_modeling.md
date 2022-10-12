@@ -151,9 +151,3 @@ use_math: true
 - Test Data
 - Probability
 - Classes
-
-<!-- <br>
-
-## 실습
-- <a href="https://colab.research.google.com/drive/1sBC-uibKJyUMnBpzZtcVRsYf1BPGIYfy?usp=sharing">Iris data 실습</a>
-- <a href="https://drive.google.com/file/d/1PbrIwzKes4ErcrsW_7LgzgF02x7xMFTU/view?usp=sharing">Kaggle data 실습</a> -->

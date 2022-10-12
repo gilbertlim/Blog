@@ -136,16 +136,6 @@ use_math: true
 
 <br>
 
-## 실습
-- <a href="https://colab.research.google.com/drive/1lFUyEt4elYAqwouuyvaBBzS8K0hQtaEY?usp=sharing">Word2Vec</a>
-- <a href="https://colab.research.google.com/drive/1TQ8txXTWucdeOKpcYzu6ChYmGpk-kgyd?usp=sharing">IMDB 데이터 임베딩 - DNN</a>
-- <a href="https://colab.research.google.com/drive/1-kvaVqEux_Eb5Z8H3Um3g1RUqGtXddvI?usp=sharing">IMDB 데이터 임베딩 - LSTM</a>
-- <a href="https://colab.research.google.com/drive/1ny2AON95zOVZll8Sr7S0-nDhMTpo6xGD?usp=sharing">IMDB 데이터 Word2Vec</a>
-- <a href="https://colab.research.google.com/drive/1cNsmD_FrxcmkooZ_UA87R3LHS5_L9whL?usp=sharing">IMDB 데이터 GloVe</a>
-- <a href="https://colab.research.google.com/drive/1Iww2x_vAJHrEAIPtHi7xd3dO5ptGWZj3?usp=sharing">감정 분석(Sentiment Analysis)</a>
-
-<br>
-
 ## References
 - https://wikidocs.net/
 - https://velog.io/@numver_se/Word2vec논문정리

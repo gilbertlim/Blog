@@ -52,6 +52,3 @@ use_math: true
 - 개별 정규분포의 모수(평균, 분산) 추정
 - 각 data points가 어떤 정규분포에 해당하는지 확률 추정
 - EM(Expectation and Maximization)
-
-## 실습
-- <a href="https://colab.research.google.com/drive/1fwysc191fsSY5E3iY7NfifW3SThC_F0m?usp=sharing">sklearn clustering 통합 실습</a>

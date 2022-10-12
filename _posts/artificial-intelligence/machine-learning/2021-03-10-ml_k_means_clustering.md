@@ -27,6 +27,3 @@ use_math: true
 - 군집의 개수를 늘릴수록 **군집 내 유사성은 증가, 군집 간 차이점은 감소함**
   - 군집이 너무 많으면, 군집 간 거리가 가까워져 군집 간 차이점이 없어지게 된다.
 - Scree Plot(스크리 도표) 활용
-
-## 실습
-- <a href="https://colab.research.google.com/drive/1H3_GzAE_etK7Qc1S-A1S8WzxwZkGR_A_?usp=sharing">K-means Clustering</a>

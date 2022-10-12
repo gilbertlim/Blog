@@ -87,8 +87,3 @@ $Adjusted\ R^2 = 1 - \cfrac{n-1}{(n-p-1)(1-R^2)}$
   
 ##### 다중 공선성 해결
 - VIF가 큰 독립변수를 제거 후 모델링
-
-<br>
-
-## 실습
-- <a href="https://colab.research.google.com/drive/1ydkR3HGsG4PLz-aevCmP9IDXkHXYgcLY?usp=sharing">회귀 분석</a>

@@ -65,9 +65,3 @@ $\hat{y} = sigmoid(W_3 \ast sigmoid(W_2 \ast sigmoid(W_1 X + b_1) + b_2) + b_3)$
 
 ![](/assets/images/posts/dl/activation_functions.png)
 https://ayyucekizrak.medium.com/derin-öğrenme-için-aktivasyon-fonksiyonlarının-karşılaştırılması-cee17fd1d9cd
-
-
-<br>
-
-## 실습
-- <a href="https://colab.research.google.com/drive/1f4jJe4UIHcfTiqyBCAFRbXQNP5-dsdnE?usp=sharing">역전파</a>

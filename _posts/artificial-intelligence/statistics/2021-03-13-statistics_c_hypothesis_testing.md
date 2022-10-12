@@ -80,8 +80,3 @@ use_math: true
 ##### 2) 유의확률(p-value) & 유의수준
 - 유의확률 < 유의수준 : 귀무가설 기각
 - 유의확률 > 유의수준 : 귀무가설 채택
-
-<br>
-
-## 실습
-- <a href="https://colab.research.google.com/drive/1uyaCSp8VWXCszCGsB9SK_aBSTWwD8ouY?usp=sharing">가설 검정</a>

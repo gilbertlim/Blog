@@ -53,8 +53,3 @@ $-1 \le r \le 1$
 |$\pm$ 0.4 ~ 0.7|상관관계가 있다|
 |$\pm$ 0.2 ~ 0.4|상관관계가 있으나 낮다|
 |$\pm$ 0.2 미만|상관관계가 거의 없다|
-
-<br>
-
-## 실습
-- <a href="https://colab.research.google.com/drive/1Pqyz7Imm6qGCSXINt79vtpSE3b6u3Fm0?usp=sharing">상관관계 분석</a>

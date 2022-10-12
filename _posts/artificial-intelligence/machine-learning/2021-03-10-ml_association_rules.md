@@ -84,8 +84,3 @@ $confidence({감자칩} \rightarrow {맥주}) = \cfrac{Support(A, B}{Support(A)}
 $Lift = \cfrac{Confidence({A}\rightarrow{B})}{Support({B})}$
 
 $Lift({감자칩}\rightarrow{맥주}) = \cfrac{Confidence({감자칩}\rightarrow{맥주})}{Support({맥주})}=\cfrac{0.75}{0.75}=1$
-
-<br>
-
-## 실습
-<a href="https://colab.research.google.com/drive/1yx-EBXM1PdO2PRTi52HPXHr8jtVlJscd?usp=sharing">연관 규칙(Association Rules)</a>

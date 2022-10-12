@@ -49,9 +49,3 @@ $0 \le \hat{y} \le 1$
 #### 시그모이드 함수에서의 학습
 
 ![](/assets/images/posts/ml/sigmoid_learn.png)
-
-<br>
-
-## 실습
-
-- <a href="https://colab.research.google.com/drive/1VxUIMVZ7JU9P-3V50-czlB5nkd822COb?usp=sharing">Logistic Regression</a>

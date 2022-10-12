@@ -73,10 +73,5 @@ VAE는 학습할 때 인코더, 디코더 별로 목표가 달라서 **학습에
 
 <br>
 
-## 실습
-- <a href="https://colab.research.google.com/drive/1fPO7ri5yIpcGN_AWnKMwvvez07GRf8q3?usp=sharing">변이형 오토인코더(Variational AutoEncoder)</a>
-
-<br>
-
 ## References
 - https://www.jeremyjordan.me/variational-autoencoders/

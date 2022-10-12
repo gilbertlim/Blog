@@ -85,11 +85,6 @@ use_math: true
 
 <br>
 
-## 실습
-- <a href="https://colab.research.google.com/drive/1gpJKsebVVinasCauyvGShnkZABoKTB_N?usp=sharing">오토인코더(AutoEncoder)</a>
-
-<br>
-
 ## References
 - https://www.oreilly.com/library/view/generative-deep-learning/9781492041931/ch01.html
 - https://towardsdatascience.com/applied-deep-learning-part-3-autoencoders-1c083af4d798

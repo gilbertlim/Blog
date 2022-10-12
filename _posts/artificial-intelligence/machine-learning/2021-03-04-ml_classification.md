@@ -113,8 +113,3 @@ $Recall = \cfrac{TP}{TP + FN}$
 > Precision과 Recall은 Trade-off 관계
 
 $F1-Score = \cfrac{2}{\cfrac{1}{Precision} + \cfrac{1}{Recall}} = 2 \times \cfrac{Precision \times Recall}{Precision + Recall}$
-
-<br>
-
-## 실습
-- <a href="https://colab.research.google.com/drive/1d93D4DQzLUiWjeFKhzyiyJwCTTUfXUZF?usp=sharing">Binary Classification</a>

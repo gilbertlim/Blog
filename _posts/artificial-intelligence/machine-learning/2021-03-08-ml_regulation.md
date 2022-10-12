@@ -56,8 +56,3 @@ use_math: true
 > Ridge와 Lasso를 결합한 회귀($l_1 \times \sum\limits_{j=1}^m \left\vert w_j \right\vert + \cfrac{1}{2} \times l_2 \times \sum\limits_{j=1}^m {w_j}^2$)
 > 
 > 규제 방식 : L1 + L2
-
-
-<!-- ## 실습
-- <a href="https://colab.research.google.com/drive/1EG4nHyKn8WWUk5iaKMfJnw1F5rqu0Sun?usp=sharing">선형 회귀 통합 실습</a>
-- <a href="https://drive.google.com/file/d/1KANiK1hcbTwWE52Cv9YBj-7-fF1RLMlf/view?usp=sharing">Bike Sharing Kaggle Data 실습</a> -->

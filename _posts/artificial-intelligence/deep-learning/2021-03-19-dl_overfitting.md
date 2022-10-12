@@ -120,7 +120,3 @@ https://excelsior-cjh.tistory.com/178
 ![](/assets/images/posts/dl/dl_overfitting.png)
 
 <br>
-
-## 실습
-- <a href="https://colab.research.google.com/drive/1tLsWjY9XBmIIeLbzePzXZtabbtZobqCz?usp=sharing">Digits MNIST 다중분류 Overfittig 해결</a>
-- <a href="https://colab.research.google.com/drive/1agHO6UiNlyBarvr2wa6_NMngs3ocrpWG?usp=sharing">Fashion MNIST 다중분류 Overfitting 해결</a>

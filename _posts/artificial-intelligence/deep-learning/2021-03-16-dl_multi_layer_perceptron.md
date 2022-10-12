@@ -123,11 +123,3 @@ $$MSE= \cfrac{((0-0.1)^2 + (1-0.7)^2 + (0-0.2)^2)}{3}$$
 $$ \begin{aligned} CEE &= -0 \times log(0.1) -1 \times log(0.7) -0 \times log(0.2) \\ &= -1 \times log(0.7) \end{aligned} $$
 
 y를 One-Hot Encoding 하면, $y$ 값이 1인 인덱스의 $\hat{y}$ 값에 대해서만 $-log(\hat{y})$로 계산하면 되기 때문에 계산량이 줄어든다. 
-
-<br>
-
-## 실습
-- <a href="https://colab.research.google.com/drive/1lqkgCCh-pbHf7BPqH49PuO9DgwGXhfU8?usp=sharing">다층 퍼셉트론</a>
-- <a href="https://colab.research.google.com/drive/13awz7Qs639ZTNL6eKrBIe0Jt1iBaQp55?usp=sharing">다층 퍼셉트론 - 경사하강법</a>
-- <a href="https://colab.research.google.com/drive/1kuDcaUriyGEKAwNCWG-Jiw5U77s2kpVi?usp=sharing">다층 퍼셉트론 - Iris data</a>
-- <a href="https://colab.research.google.com/drive/19tEtZxGZBpSco065pKvaadEftTvWwBwU?usp=sharing">소프트맥스 함수</a>

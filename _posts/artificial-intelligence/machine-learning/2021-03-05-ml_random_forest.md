@@ -69,9 +69,3 @@ use_math: true
 4. max_leaf_nodes : Leaf 최대 개수
 5. min_samples_split : 분할을 위한 최소한의 샘플 데이터 개수
 6. min_samples_leaf : Leaf가 되기 위한 최소한의 샘플 데이터 개수
-
-<!-- <br>
-
-## 실습
-- <a href="https://colab.research.google.com/drive/19tBAC09LH8fRhTdOQO_kNndb5zLiiCcv?usp=sharing">Random Forest1</a>
-- <a href="https://drive.google.com/file/d/1A7l9dGplzy8Vpru5Nqzp30dtYZk4U8QR/view?usp=sharing">Random Forest2</a> -->
