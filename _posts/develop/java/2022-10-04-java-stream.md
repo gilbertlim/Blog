@@ -2,7 +2,7 @@
 title: "[Java] Stream (스트림)"
 category: Java
 ---
-
+test
 # Stream (스트림)
 
 > 데이터 처리 연산을 지원하도록 소스에서 추출된 연속된 요소
